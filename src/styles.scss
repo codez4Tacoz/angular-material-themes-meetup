@@ -57,6 +57,16 @@ $app-light-theme: mat-light-theme(
 // that you are using.
 @include angular-material-theme($app-light-theme);
 
+$angular-dark-theme: mat-dark-theme(
+  $mat-primary-palette,
+  $mat-accent-palette,
+  mat-palette($mat-purple)
+);
+
+.darkMode {
+  @include angular-material-color($angular-dark-theme);
+}
+
 html,
 body {
   height: 100%;

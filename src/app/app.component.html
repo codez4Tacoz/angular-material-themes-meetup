@@ -3,12 +3,14 @@
   <div class="flex-stretch"></div>
 </mat-toolbar>
 
-<div class="content mat-app-background" fxLayout="row" fxLayout.xs="column"
+<!-- <div class="content mat-app-background" fxLayout="row" fxLayout.xs="column"
+  fxLayoutGap="16px"> -->
+<div class="content mat-app-background darkMode" fxLayout="row" fxLayout.xs="column"
   fxLayoutGap="16px">
-  <div fxFlex="50">
-    <!-- <section class="mat-typography"> -->
-    <h1>Welcome to the Full Stack Meetup!</h1>
-    <!-- </section> -->
+  <div>
+    <section class="mat-typography">
+      <h1>Welcome to the Full Stack Meetup!</h1>
+    </section>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <mat-form-field appearance="outline">
         <mat-label>Input</mat-label>
@@ -35,17 +37,15 @@
       <button mat-raised-button color="warn" (click)="openDialog()">Warn</button>
       <button mat-raised-button disabled>Disabled</button>
     </div>
-  </div>
-  <div fxFlex="50">
-    <!-- <h1 class="mat-display-1">Heading 1</h1> -->
-    <h1>Heading 1</h1>
+    <h1 class="mat-display-1">Heading 1</h1>
+    <!-- <h1>Heading 1</h1> -->
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
     <h4>Heading 4</h4>
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
-    <!-- <div class="mat-typography"> -->
-    <div>
+    <div class="mat-typography">
+      <!-- <div> -->
       <h2>Go Bucs!</h2>
       The Tampa Bay Buccaneers are a professional American football team based in Tampa,
       Florida. The Buccaneers compete in the National Football League (NFL) as a member
