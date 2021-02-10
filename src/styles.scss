@@ -41,8 +41,6 @@ $bucs-accent-scheme: (
   ),
 );
 
-// $bucs-warn: mat-palette($mat-purple);
-
 $mat-primary-palette: mat-palette($bucs-primary-scheme);
 $mat-accent-palette: mat-palette($bucs-accent-scheme);
 
@@ -56,16 +54,6 @@ $app-light-theme: mat-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($app-light-theme);
-
-$angular-dark-theme: mat-dark-theme(
-  $mat-primary-palette,
-  $mat-accent-palette,
-  mat-palette($mat-purple)
-);
-
-.darkMode {
-  @include angular-material-color($angular-dark-theme);
-}
 
 html,
 body {
