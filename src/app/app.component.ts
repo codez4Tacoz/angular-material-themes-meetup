@@ -17,9 +17,9 @@ export class AppComponent implements OnInit {
   constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
 
   public ngOnInit(): void {
-    this.toggleControl.valueChanges.subscribe((darkMode) => {
+    this.toggleControl.valueChanges.subscribe((useDarkMode) => {
       const darkClassName = 'darkMode';
-      this.className = darkMode ? darkClassName : '';
+      this.className = useDarkMode ? darkClassName : '';
     });
   }
 
