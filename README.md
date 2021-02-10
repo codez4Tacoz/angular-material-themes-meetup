@@ -30,6 +30,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Angular Material Theming
 
+- [Theming your Angular Material app - Multiple themes and overlay-based components](https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-components)
 - [Theming your custom component with Angular Material's theming system](https://material.angular.io/guide/theming-your-components)
 - [Material Theme Generator](https://www.nikhilwalvekar.com/ng-mat-theme-generator/)
 - [Let's implement a Theme Switch like the Angular Material Site](https://indepth.dev/posts/1218/lets-implement-a-theme-switch-like-the-angular-material-site)
