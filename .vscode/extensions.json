@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "amatiasq.sort-imports",
+    "DSKWRK.vscode-generate-getter-setter",
+    "esbenp.prettier-vscode",
+    "johnpapa.vscode-peacock",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "expertly-simple.ng-evergreen",
+    "HookyQR.beautify",
+    "johnpapa.angular-essentials"
+  ]
+}

@@ -1,0 +1,75 @@
+<mat-toolbar color="primary">
+  ng material themes
+  <div class="flex-stretch"></div>
+</mat-toolbar>
+
+<div class="content mat-app-background" fxLayout="row" fxLayout.xs="column"
+  fxLayoutGap="16px">
+  <div fxFlex="50">
+    <h1>Welcome to the Full Stack Meetup!</h1>
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <mat-form-field appearance="outline">
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <mat-checkbox checked="true">Default</mat-checkbox>
+      <mat-checkbox checked="true" color="primary">Primary</mat-checkbox>
+      <mat-checkbox checked="true" color="accent">Accent</mat-checkbox>
+      <mat-checkbox checked="true" color="warn">Warn</mat-checkbox>
+      <mat-checkbox disabled>Disabled</mat-checkbox>
+    </div>
+    <div class="demo-row" fxLayout="row" fxLayoutGap="24px">
+      <div matBadge="2" matBadgeOverlap="false">Default</div>
+      <div matBadge="1" matBadgeColor="primary" matBadgeOverlap="false">Primary</div>
+      <div matBadge="1" matBadgeColor="accent" matBadgeOverlap="false">Accent</div>
+      <div matBadge="2" matBadgeColor="warn" matBadgeOverlap="false">Warn</div>
+    </div>
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <button mat-raised-button (click)="openDialog()">Default</button>
+      <button mat-raised-button color="primary" (click)="openDialog()">Primary</button>
+      <button mat-raised-button color="accent" (click)="openDialog()">Accent</button>
+      <button mat-raised-button color="warn" (click)="openDialog()">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+    </div>
+  </div>
+  <div fxFlex="50">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <div>
+      <h2>Sample text</h2>
+      Down in his barn<br>
+      My uncle preserved for me an old machine<br>
+      For fifty-odd years<br>
+      To keep it as new has been his dearest dream<br><br>
+
+      I strip away the old debris<br>
+      That hides a shining car<br>
+      A brilliant red Barchetta<br>
+      From a better, vanished time<br><br>
+
+      We fire up the willing engine<br>
+      Responding with a roar<br>
+      Tires spitting gravel<br>
+      I commit my weekly crime<br><br>
+
+      Well-weathered leather<br>
+      Hot metal and oil<br>
+      The scented country air<br>
+      Sunlight on chrome<br>
+      The blur of the landscape<br>
+      Every nerve aware<br><br>
+
+      Drive like the wind<br>
+      Straining the limits of machine and man<br>
+      Race back to the farm<br>
+      To dream with my uncle<br>
+      At the fireside…<br><br>
+    </div>
+  </div>
+</div>
