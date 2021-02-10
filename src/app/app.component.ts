@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
 
   public ngOnInit(): void {
-    this.toggleControl.valueChanges.subscribe((darkMode) => {
+    this.toggleControl.valueChanges.subscribe((useDarkMode) => {
       const darkClassName = 'darkMode';
-      this.className = darkMode ? darkClassName : '';
-      if (darkMode) {
+      this.className = useDarkMode ? darkClassName : '';
+      if (useDarkMode) {
         this.overlay.getContainerElement().classList.add(darkClassName);
       } else {
         this.overlay.getContainerElement().classList.remove(darkClassName);
