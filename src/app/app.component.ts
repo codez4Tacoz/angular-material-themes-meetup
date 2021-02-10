@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
@@ -8,8 +10,18 @@ import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  constructor(private dialog: MatDialog) {}
+export class AppComponent implements OnInit {
+  @HostBinding('class') className = '';
+  toggleControl = new FormControl(false);
+
+  constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
+
+  public ngOnInit(): void {
+    this.toggleControl.valueChanges.subscribe((darkMode) => {
+      const darkClassName = 'darkMode';
+      this.className = darkMode ? darkClassName : '';
+    });
+  }
 
   public openDialog(): void {
     this.dialog.open(DialogDemoComponent, {
