@@ -7,11 +7,18 @@
   <mat-icon>bedtime</mat-icon>
 </mat-toolbar>
 
+<!--
+  Finally, if your app's content is not placed inside a mat-sidenav-container element,
+you need to add the mat-app-background class to your wrapper element (for example the body).
+This ensures that the proper theme background is applied to your page.
+
+https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-components
+-->
 <div class="content mat-app-background" fxLayout="row" fxLayout.xs="column"
   fxLayoutGap="16px">
   <div>
     <section class="mat-typography">
-      <h1>Welcome to the Full Stack Meetup!</h1>
+      <h1>Welcome to the 2021 Angular Material Theme!</h1>
     </section>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <mat-form-field appearance="outline">
@@ -19,6 +26,7 @@
         <input matInput>
       </mat-form-field>
     </div>
+    <!-- checkboxes -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <mat-checkbox checked="true">Default</mat-checkbox>
       <mat-checkbox checked="true" color="primary">Primary</mat-checkbox>
@@ -26,39 +34,57 @@
       <mat-checkbox checked="true" color="warn">Warn</mat-checkbox>
       <mat-checkbox disabled>Disabled</mat-checkbox>
     </div>
+    <!-- badges -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="24px">
       <div matBadge="2" matBadgeOverlap="false">Default</div>
       <div matBadge="1" matBadgeColor="primary" matBadgeOverlap="false">Primary</div>
       <div matBadge="1" matBadgeColor="accent" matBadgeOverlap="false">Accent</div>
       <div matBadge="2" matBadgeColor="warn" matBadgeOverlap="false">Warn</div>
     </div>
+    <!-- buttons -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <!-- special identifiers that Material exposes: Primary, accent, warn -->
       <button mat-raised-button (click)="openDialog()">Default</button>
       <button mat-raised-button color="primary" (click)="openDialog()">Primary</button>
       <button mat-raised-button color="accent" (click)="openDialog()">Accent</button>
       <button mat-raised-button color="warn" (click)="openDialog()">Warn</button>
       <button mat-raised-button disabled>Disabled</button>
     </div>
-    <h1 class="mat-display-1">Heading 1</h1>
-    <!-- <h1>Heading 1</h1> -->
+    <h3>Custom Theme Colors</h3>
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <!-- We also customize success, warn, info which Material doesn't make so easy (see css style named button.nx-success  et. al.) -->
+      <button mat-raised-button class="nx-success" (click)="openDialog()">Success</button>
+      <button mat-raised-button class="nx-warn" (click)="openDialog()">Warn</button>
+      <button mat-raised-button class="nx-info" (click)="openDialog()">Info</button>
+    </div>
+    <h3>Grey Theme Colors</h3>
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <button mat-raised-button class="nx-black" (click)="openDialog()">Black</button>
+      <button mat-raised-button class="nx-dark-grey" (click)="openDialog()">Dark
+        Grey</button>
+      <button mat-raised-button class="nx-grey" (click)="openDialog()">Grey</button>
+      <button mat-raised-button class="nx-light-grey" (click)="openDialog()">Light
+        Grey</button>
+      <button mat-raised-button class="nx-washed-grey" (click)="openDialog()">Washed
+        Grey</button>
+      <button mat-raised-button class="nx-white" (click)="openDialog()">White</button>
+    </div>
+    <!-- Typogra-->
+    <!-- <h1 class="mat-display-1">Heading 1</h1>
+    //<h1>Heading 1</h1>
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
     <h4>Heading 4</h4>
     <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+    <h6>Heading 6</h6> -->
     <div class="mat-typography">
       <!-- <div> -->
-      <h2>Go Bucs!</h2>
-      The Tampa Bay Buccaneers are a professional American football team based in Tampa,
-      Florida. The Buccaneers compete in the National Football League (NFL) as a member
-      club of the league's National Football Conference (NFC) South division. The club
-      joined the NFL in 1976 as an expansion team, along with the Seattle Seahawks, and
-      played its first season in the American Football Conference (AFC) West division.
-      Prior to the 1977 season, Tampa Bay switched conferences and divisions with Seattle,
-      becoming a member of the NFC Central division. During the 2002 league realignment,
-      the Buccaneers joined three former NFC West teams to form the NFC South. The club is
-      owned by the Glazer family and plays its home games at Raymond James Stadium in
-      Tampa.
+      <h2>Themed Typography: </h2>
+      <p>
+        This should pull custom typography data from $custom-typography
+      </p>
+
+
     </div>
   </div>
 </div>
