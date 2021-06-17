@@ -15,11 +15,16 @@ export class AppComponent implements OnInit {
   toggleControl = new FormControl(false);
 
   constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
+  isDarkMode= false;
 
   public ngOnInit(): void {
+
+    //TODO JANEL or maybe something like this would be easier:  <link rel="stylesheet" href="/theme/css/dark-theme.min.css" *ngIf="setMode">
+
     this.toggleControl.valueChanges.subscribe((useDarkMode) => {
       const darkClassName = 'darkMode';
       this.className = useDarkMode ? darkClassName : '';
+      this.isDarkMode = useDarkMode;
       if (useDarkMode) {
         this.overlay.getContainerElement().classList.add(darkClassName);
       } else {
