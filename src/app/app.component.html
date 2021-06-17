@@ -20,14 +20,9 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
     <section class="mat-typography">
       <h1>Welcome to the 2021 Angular Material Theme!</h1>
     </section>
-    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
-      <mat-form-field appearance="outline">
-        <mat-label>Input</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
     <!-- checkboxes -->
-    <h4> Hmmm default CB color here isn't primary shouldn't it be</h4>
+    <h4> TODO Fix this: The default checkbox color here isn't primary... shouldn't it
+      be??</h4>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <mat-checkbox checked="true">Default</mat-checkbox>
       <mat-checkbox checked="true" color="primary">Primary</mat-checkbox>
@@ -42,6 +37,7 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <div matBadge="1" matBadgeColor="accent" matBadgeOverlap="false">Accent</div>
       <div matBadge="2" matBadgeColor="warn" matBadgeOverlap="false">Warn</div>
     </div>
+
     <!-- buttons -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <!-- special identifiers that Material exposes: Primary, accent, warn -->
@@ -51,71 +47,99 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <button mat-raised-button color="warn" (click)="openDialog()">Warn</button>
       <button mat-raised-button disabled>Disabled</button>
     </div>
+
     <h4>Primary Variants</h4>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <button mat-raised-button class="nx-primary-900"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-900</button>
       <button mat-raised-button class="nx-primary-800"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-800</button>
       <button mat-raised-button class="nx-primary-700"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-700</button>
       <button mat-raised-button class="nx-primary-600"
-        (click)="openDialog()">Primary-600*</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">Primary-600</button>
       <button mat-raised-button class="nx-primary-500"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-500</button>
       <button mat-raised-button class="nx-primary-400"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-400</button>
       <button mat-raised-button class="nx-primary-300"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-300</button>
       <button mat-raised-button class="nx-primary-200"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-200</button>
       <button mat-raised-button class="nx-primary-100"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Primary-100</button>
       <button mat-raised-button class="nx-primary-50"
-        (click)="openDialog()">Primary-50</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Primary-50</button>
+      <span *ngIf="!isDarkMode">Light Mode Primary Primary is 600</span>
+      <span *ngIf="isDarkMode">Dark Mode Primary Primary is 500</span>
     </div>
+
     <h4>Accent Variants</h4>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <button mat-raised-button class="nx-secondary-900"
-        (click)="openDialog()">Accent-900</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-900</button>
       <button mat-raised-button class="nx-secondary-800"
-        (click)="openDialog()">Accent-800</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-800</button>
       <button mat-raised-button class="nx-secondary-700"
-        (click)="openDialog()">Accent-700</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-700</button>
       <button mat-raised-button class="nx-secondary-600"
-        (click)="openDialog()">Accent-600</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-600</button>
       <button mat-raised-button class="nx-secondary-500"
+        [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Accent-500*</button>
       <button mat-raised-button class="nx-secondary-400"
-        (click)="openDialog()">Accent-400</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-400</button>
       <button mat-raised-button class="nx-secondary-300"
-        (click)="openDialog()">Accent-300</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-300</button>
       <button mat-raised-button class="nx-secondary-200"
-        (click)="openDialog()">Accent-200</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-200</button>
       <button mat-raised-button class="nx-secondary-100"
-        (click)="openDialog()">Accent-100</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-100</button>
       <button mat-raised-button class="nx-secondary-50"
-        (click)="openDialog()">Accent-50</button>
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Accent-50</button>
+      <span *ngIf="!isDarkMode">Light Mode Primary Accent is 500</span>
+      <span *ngIf="isDarkMode">Dark Mode Primary Accent is 500</span>
     </div>
+
     <h3>Custom Theme Colors</h3>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <!-- We also customize success, warn, info which Material doesn't make so easy (see css style named button.nx-success  et. al.) -->
-      <button mat-raised-button class="nx-success" (click)="openDialog()">Success</button>
-      <button mat-raised-button class="nx-warn" (click)="openDialog()">Warn</button>
-      <button mat-raised-button class="nx-info" (click)="openDialog()">Info</button>
+      <button mat-raised-button class="nx-success" [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">Success</button>
+      <button mat-raised-button class="nx-warn" [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">Warn</button>
+      <button mat-raised-button class="nx-info" [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">Info</button>
     </div>
+
     <h3>Grey Theme Colors</h3>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
-      <button mat-raised-button class="nx-black" (click)="openDialog()">Black</button>
-      <button mat-raised-button class="nx-dark-grey" (click)="openDialog()">Dark
+      <button mat-raised-button class="nx-black" [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">Black</button>
+      <button mat-raised-button class="nx-dark-grey"
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Dark
         Grey</button>
-      <button mat-raised-button class="nx-grey" (click)="openDialog()">Grey</button>
-      <button mat-raised-button class="nx-light-grey" (click)="openDialog()">Light
+      <button mat-raised-button class="nx-grey" [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">Grey</button>
+      <button mat-raised-button class="nx-light-grey"
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Light
         Grey</button>
-      <button mat-raised-button class="nx-washed-grey" (click)="openDialog()">Washed
+      <button mat-raised-button class="nx-washed-grey"
+        [ngClass]="isDarkMode? 'darkMode' : ''" (click)="openDialog()">Washed
         Grey</button>
-      <button mat-raised-button class="nx-white" (click)="openDialog()">White</button>
+      <button mat-raised-button class="nx-white" [ngClass]="isDarkMode? 'darkMode' : ''"
+        (click)="openDialog()">White</button>
     </div>
+
     <!-- Typogra-->
     <!-- <h1 class="mat-display-1">Heading 1</h1>
     //<h1>Heading 1</h1>
@@ -134,6 +158,42 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
         this div here with the .mat-typography class applied
       </p>
 
+    </div>
+
+    <!-- component salad here, just demonstrating how various components will show up using the theme -->
+    <div class="mat-typography">
+      <h2>Component salad: </h2>
+      <p>Just demonstrating how various components will show up using our theme</p>
+      <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+        <!-- Input Field -->
+        <mat-form-field appearance="outline">
+          <mat-label>Input</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <!-- Chips -->
+        <!-- <mat-chip-list aria-label="Fish selection">
+          <mat-chip>One fish</mat-chip>
+          <mat-chip>Two fish</mat-chip>
+          <mat-chip color="primary" selected>Primary fish</mat-chip>
+          <mat-chip color="accent" selected>Accent fish</mat-chip>
+        </mat-chip-list> -->
+
+        <!-- date picker-->
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- radio button -->
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+          <mat-radio-button value="2">Option 2</mat-radio-button>
+        </mat-radio-group>
+
+      </div>
     </div>
   </div>
 </div>

@@ -2,8 +2,7 @@
   "name": "angular-material-themes-meetup",
   "version": "0.0.0",
   "author": {
-    "name": "Lee Carter",
-    "email": "wleecarter@gmail.com"
+    "name": "Janel Cahill"
   },
   "scripts": {
     "ng": "ng",
