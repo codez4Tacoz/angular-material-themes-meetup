@@ -44,3 +44,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/real_styles.scss
+src/styles_scss.txt

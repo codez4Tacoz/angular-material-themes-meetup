@@ -2,7 +2,7 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
-//TODO Janel Open sans, Sans-serif
+//our default font is Open Sans
 $custom-typography: mat-typography-config(
   $font-family: 'Open Sans, sans-serif',
 );
@@ -19,28 +19,31 @@ $custom-typography: mat-typography-config(
 // Override the typography in the core CSS.
 @include mat-core($custom-typography);
 
+//#region primary, accent, custom, and warn colors for light mode
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$nx-primary-scheme: (
-  50: #e9f5fb,
-  100: #c5e5f5,
-  200: #92ceec,
-  300: #66bae5,
-  400: #3ca7de,
-  500: #218dc4,
+
+$nx-light-primary-scheme: (
+  50: #B0FFF5,
+  100: #7DFFEF,
+  200: #1EFFE1,
+  300: #17BFA8,
+  400: #15AB96,
+  500: #129482,
   // 600 is primary primary
-  600: #1d7eaf,
-  700: #15709e,
-  800: #0e618b,
-  900: #085277,
+  600: #108575,
+  700: #0B5E53,
+  800: #08423B,
+  900: #06302B,
   contrast: (
-    //TODO JANEL verify these with WCAG & design system
+    //TODO check these against WCAG
     50: #333,
     100: #333,
     200: #333,
     300: #333,
-    400: #333,
+    400: #ffffff,
     500: #ffffff,
     600: #ffffff,
     700: #ffffff,
@@ -49,20 +52,19 @@ $nx-primary-scheme: (
   ),
 );
 
-$nx-accent-scheme: (
-  50: #e0f4f6,
-  100: #b3e5e9,
-  200: #80d3da,
-  300: #00a7b5,
-  400: #0093a3,
-  500: #007e8f,
-  //500 is our primary secondary.
-  600: #007385,
-  700: #006375,
-  800: #005161,
-  900: #003e4d,
+$nx-light-accent-scheme: (
+  50: #C9E7FF,
+  100: #ABD9FF,
+  200: #8ACAFF,
+  300: #3F9BE6,
+  400: #3786C7,
+  //500 is our primary accent.
+  500: #2F73AB,
+  600: #255B87,
+  700: #1F4B70,
+  800: #1A3F5E,
+  900: #173753,
   contrast: (
-    //TODO JANEL verify these with WCAG
     50: #333,
     100: #333,
     200: #333,
@@ -77,25 +79,27 @@ $nx-accent-scheme: (
 );
 
 // you must include the contrast colors!
-$nx-warn-scheme: (
-  100: #d0021b,
-  500: #d0021b,
-  700: #d0021b,
+$nx-light-warn-scheme: (
+  100: rgba(344, 40, 81, 10),
+  300: rgba(344, 40, 81, 25),
+  500: rgba(344, 40, 81, 50),
+  700: rgba(344, 40, 81, 75),
+  900: rgba(344, 40, 81, 100),
   contrast: (
-    //TODO JANEL verify these with WCAG
     100: #ffffff,
+    300: #ffffff,
     500: #ffffff,
     700: #ffffff,
+    900: #ffffff,
   ),
 );
 
 //primary , accent, warn, success, info
-$nx-custom-scheme: (
-  warning: #cf811c,
-  success: #2d841f,
-  danger: #d0021b,
-  info: #007dae,
-  //TODO JANEL update this "Black" w design system codes
+$nx-light-custom-scheme: (
+  warning: #F1BB87,
+  success: #ABE188,
+  danger: #CE7B91,
+  info: #007DAE,
   nx-black: #000000,
   nx-dark-grey: #333,
   nx-grey: #858585,
@@ -103,32 +107,32 @@ $nx-custom-scheme: (
   nx-washed-grey: #f8f8f8,
   nx-white: #ffffff,
   contrast: (
-    //TODO JANEL verify these with WCAG
-    warning: #333,
+    warning: #ffffff,
     success: #ffffff,
     danger: #ffffff,
     info: #ffffff,
     nx-black: #ffffff,
     nx-dark-grey: #ffffff,
-    nx-grey: #333,
+    nx-grey: #ffffff,
     nx-light-grey: #333,
     nx-washed-grey: #333,
     nx-white: #333,
   ),
 );
+//#endregion primary, accent, custom, and warn colors for light mode
 
 ////////////////////////////////////////////////////////////////////// // Convert maps into 'palettes'
 
 // mat-palette accepts $palette-name, main, lighter and darker variants
 // If no numbers are provided Angular Material selects sensible defaults $default: 500, $lighter: 100, $darker: 700.
-$nx-primary-palette: mat-palette($nx-primary-scheme, 600, 50, 900);
-$nx-accent-palette: mat-palette($nx-accent-scheme, 500, 50, 900);
+$nx-light-primary-palette: mat-palette($nx-light-primary-scheme, 600, 50, 900);
+$nx-light-accent-palette: mat-palette($nx-light-accent-scheme, 500, 50, 900);
 //$nx-warn-scheme:    mat-palette($mat-red);  //<< you can make a palette out of their pre-defined colors
-$nx-warn-scheme-palette: mat-palette($nx-warn-scheme); //<< or you can use your own.
+$nx-warn-palette: mat-palette($nx-light-warn-scheme); //<< or you can use your own.
 
 //For the other colors (info, success) that aren't a part of the theme elements (primary, access, warn)
 //you can create a palette here
-$nx-other-palette: mat-palette($nx-custom-scheme, custom);
+$nx-other-palette: mat-palette($nx-light-custom-scheme, custom);
 
 ///////////////////////////////// START Create 'theme' from palettes /////////////////////////////////////////////////// // //
 
@@ -140,9 +144,9 @@ $nx-other-palette: mat-palette($nx-custom-scheme, custom);
 $nx-light-theme: mat-light-theme(
   (
     color: (
-      primary: $nx-primary-palette,
-      accent: $nx-accent-palette,
-      warn: $nx-warn-scheme-palette,
+      primary: $nx-light-primary-palette,
+      accent: $nx-light-accent-palette,
+      warn: $nx-warn-palette,
     ),
   )
 );
@@ -160,12 +164,13 @@ $nx-light-theme: map_merge(
 // And may I suggest you make general custom object for this like this
 $nx-custom: map-get($nx-light-theme, custom);
 $nx-greys: map-get($nx-light-theme, custom);
-$nx-primaries: map-get($nx-light-theme, primary);
-$nx-accents: map-get($nx-light-theme, accent);
+$nx-light-primaries: map-get($nx-light-theme, primary);
+$nx-light-accents: map-get($nx-light-theme, accent);
 
-//@debug 'Property nx-primaries: #{$nx-primaries}';
+//@debug 'Property nx-primaries: #{$nx-light-primaries}';
 //@debug 'Property nx-light-theme: #{$nx-light-theme}';
 
+//#region custom css classes
 // Then you can use it in your component like this
 button.nx-success {
   background-color: mat-color($nx-custom, success);
@@ -207,87 +212,88 @@ button.nx-white {
 
 //accessing all of the primary-variants same way here:
 button.nx-primary-50 {
-  background-color: mat-color($nx-primaries, 50);
-  color: mat-color($nx-primaries, '50-contrast');
+  background-color: mat-color($nx-light-primaries, 50);
+  color: mat-color($nx-light-primaries, '50-contrast');
 }
 button.nx-primary-100 {
-  background-color: mat-color($nx-primaries, 100);
-  color: mat-color($nx-primaries, '100-contrast');
+  background-color: mat-color($nx-light-primaries, 100);
+  color: mat-color($nx-light-primaries, '100-contrast');
 }
 button.nx-primary-200 {
-  background-color: mat-color($nx-primaries, 200);
-  color: mat-color($nx-primaries, '200-contrast');
+  background-color: mat-color($nx-light-primaries, 200);
+  color: mat-color($nx-light-primaries, '200-contrast');
 }
 button.nx-primary-300 {
-  background-color: mat-color($nx-primaries, 300);
-  color: mat-color($nx-primaries, '300-contrast');
+  background-color: mat-color($nx-light-primaries, 300);
+  color: mat-color($nx-light-primaries, '300-contrast');
 }
 button.nx-primary-400 {
-  background-color: mat-color($nx-primaries, 400);
-  color: mat-color($nx-primaries, '400-contrast');
+  background-color: mat-color($nx-light-primaries, 400);
+  color: mat-color($nx-light-primaries, '400-contrast');
 }
 button.nx-primary-500 {
-  background-color: mat-color($nx-primaries, 500);
-  color: mat-color($nx-primaries, '500-contrast');
+  background-color: mat-color($nx-light-primaries, 500);
+  color: mat-color($nx-light-primaries, '500-contrast');
 }
 button.nx-primary-600 {
-  background-color: mat-color($nx-primaries, 600);
-  color: mat-color($nx-primaries, '600-contrast');
+  background-color: mat-color($nx-light-primaries, 600);
+  color: mat-color($nx-light-primaries, '600-contrast');
 }
 button.nx-primary-700 {
-  background-color: mat-color($nx-primaries, 700);
-  color: mat-color($nx-primaries, '700-contrast');
+  background-color: mat-color($nx-light-primaries, 700);
+  color: mat-color($nx-light-primaries, '700-contrast');
 }
 button.nx-primary-800 {
-  background-color: mat-color($nx-primaries, 800);
-  color: mat-color($nx-primaries, '800-contrast');
+  background-color: mat-color($nx-light-primaries, 800);
+  color: mat-color($nx-light-primaries, '800-contrast');
 }
 button.nx-primary-900 {
-  background-color: mat-color($nx-primaries, 900);
-  color: mat-color($nx-primaries, '900-contrast');
+  background-color: mat-color($nx-light-primaries, 900);
+  color: mat-color($nx-light-primaries, '900-contrast');
 }
 
 //accessing all of the secondary-variants same way here:
 button.nx-secondary-50 {
-  background-color: mat-color($nx-accents, 50);
-  color: mat-color($nx-accents, '50-contrast');
+  background-color: mat-color($nx-light-accents, 50);
+  color: mat-color($nx-light-accents, '50-contrast');
 }
 button.nx-secondary-100 {
-  background-color: mat-color($nx-accents, 100);
-  color: mat-color($nx-accents, '100-contrast');
+  background-color: mat-color($nx-light-accents, 100);
+  color: mat-color($nx-light-accents, '100-contrast');
 }
 button.nx-secondary-200 {
-  background-color: mat-color($nx-accents, 200);
-  color: mat-color($nx-accents, '200-contrast');
+  background-color: mat-color($nx-light-accents, 200);
+  color: mat-color($nx-light-accents, '200-contrast');
 }
 button.nx-secondary-300 {
-  background-color: mat-color($nx-accents, 300);
-  color: mat-color($nx-accents, '300-contrast');
+  background-color: mat-color($nx-light-accents, 300);
+  color: mat-color($nx-light-accents, '300-contrast');
 }
 button.nx-secondary-400 {
-  background-color: mat-color($nx-accents, 400);
-  color: mat-color($nx-accents, '400-contrast');
+  background-color: mat-color($nx-light-accents, 400);
+  color: mat-color($nx-light-accents, '400-contrast');
 }
 button.nx-secondary-500 {
-  background-color: mat-color($nx-accents, 500);
-  color: mat-color($nx-accents, '500-contrast');
+  background-color: mat-color($nx-light-accents, 500);
+  color: mat-color($nx-light-accents, '500-contrast');
 }
 button.nx-secondary-600 {
-  background-color: mat-color($nx-accents, 600);
-  color: mat-color($nx-accents, '600-contrast');
+  background-color: mat-color($nx-light-accents, 600);
+  color: mat-color($nx-light-accents, '600-contrast');
 }
 button.nx-secondary-700 {
-  background-color: mat-color($nx-accents, 700);
-  color: mat-color($nx-accents, '700-contrast');
+  background-color: mat-color($nx-light-accents, 700);
+  color: mat-color($nx-light-accents, '700-contrast');
 }
 button.nx-secondary-800 {
-  background-color: mat-color($nx-accents, 800);
-  color: mat-color($nx-accents, '800-contrast');
+  background-color: mat-color($nx-light-accents, 800);
+  color: mat-color($nx-light-accents, '800-contrast');
 }
 button.nx-secondary-900 {
-  background-color: mat-color($nx-accents, 900);
-  color: mat-color($nx-accents, '900-contrast');
+  background-color: mat-color($nx-light-accents, 900);
+  color: mat-color($nx-light-accents, '900-contrast');
 }
+// #endregion
 //// ////////////// END custom other colors in theme
 
 // Include theme styles for core and each component used in your app.
@@ -297,13 +303,275 @@ button.nx-secondary-900 {
 
 ///////////////////////////////// END   Create 'theme' from palettes//////////////////////////////////////////////////////// // //
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////// dark theme
 
-$nx-dark-theme: mat-dark-theme(
-  $nx-primary-palette,
-  $nx-accent-palette,
-  mat-palette($mat-purple)
+//#region primary, accent, custom, and warn colors for dark mode
+
+$nx-dark-primary-scheme: (
+  50: #D4FFF9,
+  100: #8AFFEF,
+  200: #1FFFE1,
+  300: #1AD4BB,
+  400: #17BAA4,
+  // 500 is primary primary
+  500: #118A79,
+  600: #0E786A,
+  700: #0B6156,
+  800: #095248,
+  900: #08473F,
+  contrast: (
+    50: #333,
+    100: #333,
+    200: #333,
+    300: #333,
+    400: #333,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  ),
 );
+
+
+$nx-dark-accent-scheme: (
+  50: #C9E7FF,
+  100: #ABD9FF,
+  200: #8ACAFF,
+  300: #3F9BE6,
+  400: #3F9BE6,
+  //500 is our primary accent.
+  500: #2F73AB,
+  600: #265F8C,
+  700: #204F75,
+  800: #1C4466,
+  900: #1A3F5E,
+  contrast: (
+    50: #333,
+    100: #333,
+    200: #333,
+    300: #333,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  ),
+);
+
+//primary , accent, warn, success, info
+$nx-dark-custom-scheme: (
+  warning: #ffb35d,
+  success: #61bb4b,
+  danger: #ff797f,
+  info: #5ABFED,
+  nx-black: #333333,
+  nx-dark-grey: #6B6B6B,
+  nx-grey: #858585,
+  nx-light-grey: #d8d8d8,
+  nx-washed-grey: #f8f8f8,
+  nx-white: #ffffff,
+  contrast: (
+    warning: #333,
+    success: #333,
+    danger: #333,
+    info: #333,
+    nx-black: #ffffff,
+    nx-dark-grey: #ffffff,
+    nx-grey: #ffffff,
+    nx-light-grey: #333,
+    nx-washed-grey: #333,
+    nx-white: #333,
+  ),
+);
+
+// Error Colors
+//Angular Material calls red/error "warn"... yay :|
+$nx-dark-warn-scheme: (
+  100: rgba(255, 121, 127, 10),
+  300: rgba(255, 121, 127, 25),
+  500: rgba(255, 121, 127, 50),
+  700: rgba(255, 121, 127, 75),
+  900: rgba(255, 121, 127, 100),
+  contrast: (
+    100: #ffffff,
+    300: #ffffff,
+    500: #ffffff,
+    700: #ffffff,
+    900: #ffffff,
+  ),
+);
+//#endregion primary, accent, custom, and warn colors
+////////////////////////////////////////// // Convert maps into 'palettes'
+
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$nx-dark-primary-palette: mat-palette($nx-dark-primary-scheme, 500, 50, 900);
+$nx-dark-accent-palette: mat-palette($nx-dark-accent-scheme, 500, 50, 900);
+$nx-dark-warn-palette: mat-palette($nx-dark-warn-scheme);
+
+//For the other colors (info, success) that aren't a part of the theme elements (primary, access, warn)
+//you can create a palette here
+$nx-dark-custom-palette: mat-palette($nx-dark-custom-scheme, custom);
+
+////////////// START Create 'theme' from palettes ////////////// // //
+
+// Create the theme object based off of mat-dark
+$nx-dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $nx-dark-primary-palette,
+      accent: $nx-dark-accent-palette,
+      warn: $nx-dark-warn-palette,
+    ),
+  )
+);
+
+// merge the dark theme with your "other" palette
+$nx-dark-theme: map_merge(
+  $nx-dark-theme,
+  (
+    custom: $nx-dark-custom-palette,
+  )
+);
+
+
+// After this you have one object where every color is located.
+// And may I suggest you make general custom object for this like this
+$nx-dark-custom: map-get($nx-dark-theme, custom);
+$nx-dark-greys: map-get($nx-dark-theme, custom);
+$nx-dark-primaries: map-get($nx-dark-theme, primary);
+$nx-dark-accents: map-get($nx-dark-theme, accent);
+
+//#region custom css classes
+// Then you can use it in your component like this
+button.nx-success.darkMode {
+  background-color: mat-color($nx-dark-custom, success);
+  color: mat-color($nx-dark-custom, success-contrast);
+}
+button.nx-info.darkMode  {
+  background-color: mat-color($nx-dark-custom, info);
+  color: mat-color($nx-dark-custom, info-contrast);
+}
+button.nx-warn.darkMode  {
+  background-color: mat-color($nx-dark-custom, warning);
+  color: mat-color($nx-dark-custom, warning-contrast);
+}
+
+button.nx-black.darkMode {
+  background-color: mat-color($nx-dark-greys, nx-black);
+  color: mat-color($nx-dark-greys, nx-black-contrast);
+}
+button.nx-dark-grey.darkMode {
+  background-color: mat-color($nx-dark-greys, nx-dark-grey);
+  color: mat-color($nx-dark-greys, nx-dark-grey-contrast);
+}
+button.nx-grey.darkMode {
+  background-color: mat-color($nx-dark-greys, nx-grey);
+  color: mat-color($nx-dark-greys, nx-grey-contrast);
+}
+button.nx-light-grey.darkMode {
+  background-color: mat-color($nx-dark-greys, nx-light-grey);
+  color: mat-color($nx-dark-greys, nx-light-grey-contrast);
+}
+button.nx-washed-grey.darkMode {
+  background-color: mat-color($nx-dark-greys, nx-washed-grey);
+  color: mat-color($nx-dark-greys, nx-washed-grey-contrast);
+}
+button.nx-white.darkMode {
+  background-color: mat-color($nx-dark-greys, nx-white);
+  color: mat-color($nx-dark-greys, nx-white-contrast);
+}
+
+//accessing all of the primary-variants same way here:
+button.nx-primary-50.darkMode {
+  background-color: mat-color($nx-dark-primaries, 50);
+  color: mat-color($nx-dark-primaries, '50-contrast');
+}
+button.nx-primary-100.darkMode {
+  background-color: mat-color($nx-dark-primaries, 100);
+  color: mat-color($nx-dark-primaries, '100-contrast');
+}
+button.nx-primary-200.darkMode {
+  background-color: mat-color($nx-dark-primaries, 200);
+  color: mat-color($nx-dark-primaries, '200-contrast');
+}
+button.nx-primary-300.darkMode {
+  background-color: mat-color($nx-dark-primaries, 300);
+  color: mat-color($nx-dark-primaries, '300-contrast');
+}
+button.nx-primary-400.darkMode {
+  background-color: mat-color($nx-dark-primaries, 400);
+  color: mat-color($nx-dark-primaries, '400-contrast');
+}
+button.nx-primary-500.darkMode {
+  background-color: mat-color($nx-dark-primaries, 500);
+  color: mat-color($nx-dark-primaries, '500-contrast');
+}
+button.nx-primary-600.darkMode {
+  background-color: mat-color($nx-dark-primaries, 600);
+  color: mat-color($nx-dark-primaries, '600-contrast');
+}
+button.nx-primary-700.darkMode {
+  background-color: mat-color($nx-dark-primaries, 700);
+  color: mat-color($nx-dark-primaries, '700-contrast');
+}
+button.nx-primary-800.darkMode {
+  background-color: mat-color($nx-dark-primaries, 800);
+  color: mat-color($nx-dark-primaries, '800-contrast');
+}
+button.nx-primary-900.darkMode {
+  background-color: mat-color($nx-dark-primaries, 900);
+  color: mat-color($nx-dark-primaries, '900-contrast');
+}
+
+//accessing all of the secondary-variants same way here:
+button.nx-secondary-50.darkMode {
+  background-color: mat-color($nx-dark-accents, 50);
+  color: mat-color($nx-dark-accents, '50-contrast');
+}
+button.nx-secondary-100.darkMode {
+  background-color: mat-color($nx-dark-accents, 100);
+  color: mat-color($nx-dark-accents, '100-contrast');
+}
+button.nx-secondary-200.darkMode {
+  background-color: mat-color($nx-dark-accents, 200);
+  color: mat-color($nx-dark-accents, '200-contrast');
+}
+button.nx-secondary-300.darkMode {
+  background-color: mat-color($nx-dark-accents, 300);
+  color: mat-color($nx-dark-accents, '300-contrast');
+}
+button.nx-secondary-400.darkMode {
+  background-color: mat-color($nx-dark-accents, 400);
+  color: mat-color($nx-dark-accents, '400-contrast');
+}
+button.nx-secondary-500.darkMode {
+  background-color: mat-color($nx-dark-accents, 500);
+  color: mat-color($nx-dark-accents, '500-contrast');
+}
+button.nx-secondary-600.darkMode {
+  background-color: mat-color($nx-dark-accents, 600);
+  color: mat-color($nx-dark-accents, '600-contrast');
+}
+button.nx-secondary-700.darkMode {
+  background-color: mat-color($nx-dark-accents, 700);
+  color: mat-color($nx-dark-accents, '700-contrast');
+}
+button.nx-secondary-800.darkMode {
+  background-color: mat-color($nx-dark-accents, 800);
+  color: mat-color($nx-dark-accents, '800-contrast');
+}
+button.nx-secondary-900.darkMode {
+  background-color: mat-color($nx-dark-accents, 900);
+  color: mat-color($nx-dark-accents, '900-contrast');
+}
+// #endregion
+//// ////////////// END custom other colors in theme
+
+
+
 
 .darkMode {
   @include angular-material-color($nx-dark-theme);
@@ -315,5 +583,5 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif; // so that we can see our theme override this
 }
