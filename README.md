@@ -1,5 +1,7 @@
 # Angular Material Themes
 
+To view a live demo, check out the StackBlitz: https://stackblitz.com/edit/angular-mat-theme?file=src/app/app.component.html
+
 To view the final version of the app:
 
 ```

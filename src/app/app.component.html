@@ -21,16 +21,18 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <h1>Welcome to the 2021 Angular Material Theme!</h1>
     </section>
     <!-- checkboxes -->
-    <h4> TODO Fix this: The default checkbox color here isn't primary... shouldn't it
-      be?? Looks like maybe not. default for checkbox and slide toggle is the accent color
+    <h4> Notice the defaults: the button default is white... the badge default is
+      primary... the checkbox default is accent
     </h4>
+    <!-- checkboxes - for some reason Stackblitz does not like checked="true" here -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
-      <mat-checkbox checked="true">Default</mat-checkbox>
-      <mat-checkbox checked="true" color="primary">Primary</mat-checkbox>
-      <mat-checkbox checked="true" color="accent">Accent</mat-checkbox>
-      <mat-checkbox checked="true" color="warn">Warn</mat-checkbox>
+      <mat-checkbox>Default</mat-checkbox>
+      <mat-checkbox color="primary">Primary</mat-checkbox>
+      <mat-checkbox color="accent">Accent</mat-checkbox>
+      <mat-checkbox color="warn">Warn</mat-checkbox>
       <mat-checkbox disabled>Disabled</mat-checkbox>
     </div>
+
     <!-- badges -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="24px">
       <div matBadge="2" matBadgeOverlap="false">Default</div>
@@ -39,7 +41,7 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <div matBadge="2" matBadgeColor="warn" matBadgeOverlap="false">Warn</div>
     </div>
 
-    <!-- buttons -->
+    <!-- Raised buttons -->
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
       <!-- special identifiers that Material exposes: Primary, accent, warn -->
       <button mat-raised-button (click)="openDialog()">Default</button>
@@ -47,7 +49,92 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <button mat-raised-button color="accent" (click)="openDialog()">Accent</button>
       <button mat-raised-button color="warn" (click)="openDialog()">Warn</button>
       <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
     </div>
+    <!-- Flat buttons -->
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <!-- special identifiers that Material exposes: Primary, accent, warn -->
+      <button mat-flat-button>Default</button>
+      <button mat-flat-button color="primary">Primary</button>
+      <button mat-flat-button color="accent">Accent</button>
+      <button mat-flat-button color="warn">Warn</button>
+      <button mat-flat-button disabled>Disabled</button>
+      <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+    <!-- Stroked buttons -->
+    <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
+      <!-- special identifiers that Material exposes: Primary, accent, warn -->
+      <button mat-stroked-button>Default</button>
+      <button mat-stroked-button color="primary">Primary</button>
+      <button mat-stroked-button color="accent">Accent</button>
+      <button mat-stroked-button color="warn">Warn</button>
+      <button mat-stroked-button disabled>Disabled</button>
+      <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+
+    <section>
+      <div class="example-label">FAB</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button mat-fab
+              aria-label="Example icon button with a delete icon - using the default color (no color specified)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="primary"
+              aria-label="Example icon button with a delete icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="accent"
+              aria-label="Example icon button with a bookmark icon">
+              <mat-icon>bookmark</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="warn"
+              aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab disabled aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="example-label">Icon Button</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <button mat-icon-button
+            aria-label="Example icon button with a vertical three dot icon - default color">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <button mat-icon-button color="primary"
+            aria-label="Example icon button with a home icon - primary color">
+            <mat-icon>home</mat-icon>
+          </button>
+          <button mat-icon-button color="accent"
+            aria-label="Example icon button with a menu icon - accent color">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <button mat-icon-button color="warn"
+            aria-label="Example icon button with a heart icon - warn color">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button disabled
+            aria-label="Example icon button with a open in new tab icon - disabled">
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </div>
+      </div>
+    </section>
 
     <h4>Primary Variants</h4>
     <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
@@ -117,7 +204,7 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <button mat-raised-button class="nx-success" [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Success</button>
       <button mat-raised-button class="nx-warn" [ngClass]="isDarkMode? 'darkMode' : ''"
-        (click)="openDialog()">Warn</button>
+        (click)="openDialog()">Caution</button>
       <button mat-raised-button class="nx-info" [ngClass]="isDarkMode? 'darkMode' : ''"
         (click)="openDialog()">Info</button>
     </div>
@@ -166,11 +253,7 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
       <h2>Component salad: </h2>
       <p>Just demonstrating how various components will show up using our theme</p>
       <div class="demo-row" fxLayout="row" fxLayoutGap="16px">
-        <!-- Input Field -->
-        <mat-form-field appearance="outline">
-          <mat-label>Input</mat-label>
-          <input matInput>
-        </mat-form-field>
+
 
         <!-- Chips -->
         <!-- <mat-chip-list aria-label="Fish selection">
@@ -180,19 +263,182 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
           <mat-chip color="accent" selected>Accent fish</mat-chip>
         </mat-chip-list> -->
 
-        <!-- date picker-->
-        <mat-form-field>
-          <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="picker">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
 
-        <!-- radio button -->
-        <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="1">Option 1</mat-radio-button>
-          <mat-radio-button value="2">Option 2</mat-radio-button>
-        </mat-radio-group>
+
+
+
+        <br />
+        <br />
+
+        <table>
+
+          <tr>
+            <td class="widgetLabel">Mat Icon Chip List</td>
+            <td>
+              <!-- mat icon chip list-->
+              <mat-chip-list class="mat-chip-list" tabindex="-1" aria-required="false"
+                aria-disabled="false" aria-invalid="false" aria-multiselectable="false"
+                aria-orientation="horizontal" id="mat-chip-list-1">
+                <div class="mat-chip-list-wrapper">
+                  <mat-icon role="img" aria-hidden="true">home</mat-icon>
+                  <mat-icon color="primary" role="img" aria-hidden="true">account_circle
+                  </mat-icon>
+                  <mat-icon color="accent" role="img" aria-hidden="true">alarm</mat-icon>
+                  <mat-icon color="warn" role="img" aria-hidden="true">power_settings_new
+                  </mat-icon>
+                </div>
+              </mat-chip-list>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Slide toggles</td>
+            <td>
+              <!-- Slide Toggles -->
+              <mat-slide-toggle checked="true">
+                Default slide toggle
+              </mat-slide-toggle>
+              <mat-slide-toggle color="primary" checked="true">
+                Primary slide toggle
+              </mat-slide-toggle>
+              <mat-slide-toggle color="accent" checked="true">
+                Accent slide toggle
+              </mat-slide-toggle>
+              <mat-slide-toggle color="warn" checked="true">
+                Warn slide toggle
+              </mat-slide-toggle>
+              <mat-slide-toggle disabled="true" checked="true">
+                Disabled slide toggle
+              </mat-slide-toggle>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Radio Buttons</td>
+            <td>
+              <!-- radio button -->
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1" checked="true">Option 1</mat-radio-button>
+                <mat-radio-button value="2">Option 2</mat-radio-button>
+              </mat-radio-group>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Date Picker</td>
+            <td>
+              <!-- date picker-->
+              <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Filled Date Picker</td>
+            <td>
+              <!-- Filled date picker-->
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Date Range Picker</td>
+            <td>
+              <!--  Date Range Picker  -->
+              <mat-form-field>
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker3">
+                  <input matStartDate placeholder="Start date">
+                  <input matEndDate placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker3></mat-date-range-picker>
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Filled Date Range Picker</td>
+            <td>
+              <!-- Filled Date Range Picker  -->
+              <mat-form-field appearance="fill">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker4">
+                  <input matStartDate placeholder="Start date">
+                  <input matEndDate placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker4></mat-date-range-picker>
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Input</td>
+            <td>
+              <!-- Input Field -->
+              <mat-form-field appearance="outline">
+                <mat-label>Input</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="widgetLabel">Filled Input</td>
+            <td>
+              <!-- Filled Input Field -->
+              <mat-form-field appearance="fill">
+                <mat-label>Input</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td class="widgetLabel">Dropdown List</td>
+            <td>
+              <!-- Filled DDL  Field -->
+              <mat-form-field>
+                <mat-label>Select</mat-label>
+                <mat-select>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td class="widgetLabel">Filled Dropdown List</td>
+            <td>
+              <!-- Filled DDL  Field -->
+              <mat-form-field appearance="fill">
+                <mat-label>Select</mat-label>
+                <mat-select>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="widgetLabel"></td>
+            <td>
+
+            </td>
+          </tr>
+        </table>
 
       </div>
     </div>
