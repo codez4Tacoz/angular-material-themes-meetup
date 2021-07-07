@@ -11,11 +11,26 @@ import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+
+  isDarkMode= false;
+
   @HostBinding('class') className = '';
   toggleControl = new FormControl(false);
 
+  benefits = new FormControl();
+  benefitsList: string[] = [
+    'Flexible Schedule',
+    '401K Matching',
+    '9/80 Workweek',
+    'Charitable Contribution Matching',
+    'Unlimited PTO',
+    'Volunteer Time Off',
+    'Paid Cell Phone',
+    '100% Paid Medical'
+  ];
+
   constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
-  isDarkMode= false;
+
 
   public ngOnInit(): void {
 
