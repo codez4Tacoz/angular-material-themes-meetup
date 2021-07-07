@@ -1,5 +1,7 @@
 # Angular Material Themes
 
+To view a live demo, check out the StackBlitz: https://stackblitz.com/edit/angular-mat-theme?file=src/app/app.component.html
+
 To view the final version of the app:
 
 ```
@@ -7,16 +9,6 @@ npm install
 
 npm start
 ```
-
-Checkout these branches to follow along with the presentation:
-
-- `01-start`
-- `02-custom-theme`
-- `03-custom-theme-hex-codes`
-- `04-custom-fonts`
-- `05-dark-theme`
-- `06-dark-theme-switcher`
-- `07-overlay-fix`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
@@ -44,7 +36,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [30 Examples of Material Design Palette Color Usage](https://saruwakakun.com/en/material-color)
 - [Make Tints and Shades](https://maketintsandshades.com)
 
-### Tampa Bay Buccaneers
-
-- [Tampa Bay Buccaneers - Wikipedia](https://en.wikipedia.org/wiki/Tampa_Bay_Buccaneers)
-- [Buccaneer Color Codes](https://www.codeofcolors.com/tampa-bay-buccaneers-colors.html)
