@@ -394,12 +394,42 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
                     </tr>
 
                     <tr>
-                        <td class="widgetLabel">Input</td>
+                        <td class="widgetLabel">Default Input</td>
                         <td>
                             <!-- Input Field -->
-                            <mat-form-field appearance="outline">
+                            <mat-form-field class="mr-8">
                                 <mat-label>Input</mat-label>
                                 <input matInput>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="widgetLabel">Outlined Input</td>
+                        <td>
+                            <!-- Input Field -->
+                            <mat-form-field appearance="outline" class="mr-8">
+                                <mat-label>Input</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                            <!-- Filled Input Field -->
+                            <mat-form-field appearance="outline" class="mr-8">
+                                <mat-label>Both a label and a placeholder</mat-label>
+                                <input matInput placeholder="Simple placeholder">
+                            </mat-form-field>
+
+                            <!-- Filled Input Field -->
+                            <mat-form-field appearance="outline" class="mr-8">
+                                <mat-select required>
+                                    <mat-option>-- None --</mat-option>
+                                    <mat-option value="option">Option</mat-option>
+                                </mat-select>
+                                <mat-label>
+                                    <mat-icon>6_ft_apart</mat-icon>
+                                    <b> Fancy</b>
+                                    <i> label</i>
+                                </mat-label>
                             </mat-form-field>
                         </td>
                     </tr>
@@ -408,9 +438,28 @@ https://material.angular.io/guide/theming#multiple-themes-and-overlay-based-comp
                         <td class="widgetLabel">Filled Input</td>
                         <td>
                             <!-- Filled Input Field -->
-                            <mat-form-field appearance="fill">
+                            <mat-form-field appearance="fill" class="mr-8">
                                 <mat-label>Input</mat-label>
                                 <input matInput>
+                            </mat-form-field>
+
+                            <!-- Filled Input Field -->
+                            <mat-form-field appearance="fill" class="mr-8">
+                                <mat-label>Both a label and a placeholder</mat-label>
+                                <input matInput placeholder="Simple placeholder">
+                            </mat-form-field>
+
+                            <!-- Filled Input Field -->
+                            <mat-form-field appearance="fill" class="mr-8">
+                                <mat-select required>
+                                    <mat-option>-- None --</mat-option>
+                                    <mat-option value="option">Option</mat-option>
+                                </mat-select>
+                                <mat-label>
+                                    <mat-icon>6_ft_apart</mat-icon>
+                                    <b> Fancy</b>
+                                    <i> label</i>
+                                </mat-label>
                             </mat-form-field>
                         </td>
                     </tr>
