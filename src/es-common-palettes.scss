@@ -1,0 +1,135 @@
+$nx-black: #000000;
+$nx-dark-grey: #333;
+$nx-grey: #858585;
+$nx-light-grey: #d8d8d8;
+$nx-washed-grey: #f8f8f8;
+$nx-white: #ffffff;
+
+
+
+
+// $nx-saturations-scheme: (
+//   nx-black: $nx-black,
+//   nx-dark-grey: $nx-dark-grey,
+//   nx-grey: $nx-grey,
+//   nx-light-grey: $nx-light-grey,
+//   nx-washed-grey: $nx-washed-grey,
+//   nx-white: $nx-white,
+//   contrast: (
+//     nx-black: $nx-white,
+//     nx-dark-grey: $nx-white,
+//     nx-grey: $nx-white,
+//     nx-light-grey: $nx-black,
+//     nx-washed-grey: $nx-black,
+//     nx-white: $nx-black,
+//   ),
+// );
+
+
+// //Angular Material calls red/error "warn"... yay :|
+//red
+//rgba(344, 40, 81, 100) == #ff797f
+$nx-warn-10-pct: rgba(255, 121, 127, 10);
+$nx-warn-25-pct: rgba(255, 121, 127, 25);
+$nx-warn-50-pct: rgba(255, 121, 127, 50);
+$nx-warn-75-pct: rgba(255, 121, 127, 75);
+$nx-warn-100-pct: rgba(255, 121, 127, 100);
+
+// you must include the contrast colors!
+$nx-warn-scheme: (
+  100: $nx-warn-10-pct,
+  300: $nx-warn-25-pct,
+  500: $nx-warn-50-pct,
+  700: $nx-warn-75-pct,
+  900: $nx-warn-100-pct,
+  contrast: (
+    100: $nx-white,
+    300: $nx-white,
+    500: $nx-white,
+    700: $nx-white,
+    900: $nx-white,
+  ),
+);
+
+// green
+//rgba(97, 187, 75, 100) == #61bb4b
+$nx-success-10-pct: rgba(97, 187, 75, 10);
+$nx-success-25-pct: rgba(97, 187, 75, 25);
+$nx-success-50-pct: rgba(97, 187, 75, 50);
+$nx-success-75-pct: rgba(97, 187, 75, 75);
+$nx-success-100-pct: rgba(97, 187, 75, 100);
+
+// // you must include the contrast colors!
+// $nx-success-scheme: (
+//   100: $nx-success-10-pct,
+//   300: $nx-success-25-pct,
+//   500: $nx-success-50-pct,
+//   700: $nx-success-75-pct,
+//   900: $nx-success-100-pct,
+//   contrast: (
+//     100: $nx-white,
+//     300: $nx-white,
+//     500: $nx-white,
+//     700: $nx-white,
+//     900: $nx-white,
+//   ),
+// );
+
+//yellow
+//rgba(255, 179, 93, 100) = #FFB35D
+$nx-caution-10-pct: rgba(255, 179, 93, 10);
+$nx-caution-25-pct: rgba(255, 179, 93, 25);
+$nx-caution-50-pct: rgba(255, 179, 93, 50);
+$nx-caution-75-pct: rgba(255, 179, 93, 75);
+$nx-caution-100-pct: rgba(255, 179, 93, 100);
+
+// // you must include the contrast colors!
+// $nx-caution-scheme: (
+//   100: $nx-caution-10-pct,
+//   300: $nx-caution-25-pct,
+//   500: $nx-caution-50-pct,
+//   700: $nx-caution-75-pct,
+//   900: $nx-caution-100-pct,
+//   contrast: (
+//     100: $nx-white,
+//     300: $nx-white,
+//     500: $nx-white,
+//     700: $nx-white,
+//     900: $nx-white,
+//   ),
+// );
+
+//blue
+//rgba(90, 191, 237, 100) == #5ABFED
+$nx-info-10-pct: rgba(90, 191, 237, 10);
+$nx-info-25-pct: rgba(90, 191, 237, 25);
+$nx-info-50-pct: rgba(90, 191, 237, 50);
+$nx-info-75-pct: rgba(90, 191, 237, 75);
+$nx-info-100-pct: rgba(90, 191, 237, 100);
+
+// // you must include the contrast colors!
+// $nx-info-scheme: (
+//   100: $nx-info-10-pct,
+//   300: $nx-info-25-pct,
+//   500: $nx-info-50-pct,
+//   700: $nx-info-75-pct,
+//   900: $nx-info-100-pct,
+//   contrast: (
+//     100: $nx-white,
+//     300: $nx-white,
+//     500: $nx-white,
+//     700: $nx-white,
+//     900: $nx-white,
+//   ),
+// );
+
+
+//blue:
+$nx-info: $nx-info-100-pct;
+//green:
+$nx-success: $nx-success-100-pct;
+//yellow:
+$nx-caution: $nx-caution-100-pct;
+//red:
+$nx-warning: $nx-warn-100-pct;
+

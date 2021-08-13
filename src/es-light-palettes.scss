@@ -1,0 +1,78 @@
+@import './es-common-palettes.scss';
+
+// Emerald Seas Theme
+
+$nx-light-primary-50: #B0FFF5;
+$nx-light-primary-100: #7DFFEF;
+$nx-light-primary-200: #1EFFE1;
+$nx-light-primary-300: #17BFA8;
+$nx-light-primary-400: #15AB96;
+$nx-light-primary-500: #129482;
+$nx-light-primary-600: #108575;
+$nx-light-primary-700: #0B5E53;
+$nx-light-primary-800: #08423B;
+$nx-light-primary-900: #06302B;
+
+$nx-light-secondary-50: #C9E7FF;
+$nx-light-secondary-100: #ABD9FF;
+$nx-light-secondary-200: #8ACAFF;
+$nx-light-secondary-300: #3F9BE6;
+$nx-light-secondary-400: #3786C7;
+$nx-light-secondary-500: #2F73AB;
+$nx-light-secondary-600: #255B87;
+$nx-light-secondary-700: #1F4B70;
+$nx-light-secondary-800: #1A3F5E;
+$nx-light-secondary-900: #173753;
+
+
+$nx-light-primary-scheme: (
+  50: $nx-light-primary-50,
+  100: $nx-light-primary-100,
+  200: $nx-light-primary-200,
+  300: $nx-light-primary-300,
+  400: $nx-light-primary-400,
+  500: $nx-light-primary-500,
+  // 600 is primary primary
+  600: $nx-light-primary-600,
+  700: $nx-light-primary-700,
+  800: $nx-light-primary-800,
+  900: $nx-light-primary-900,
+  contrast: (
+    50: $nx-black,
+    100: $nx-black,
+    200: $nx-black,
+    300: $nx-black,
+    400: $nx-white,
+    500: $nx-white,
+    600: $nx-white,
+    700: $nx-white,
+    800: $nx-white,
+    900: $nx-white,
+  ),
+);
+
+$nx-light-accent-scheme: (
+  50: $nx-light-secondary-50,
+  100: $nx-light-secondary-100,
+  200: $nx-light-secondary-200,
+  300: $nx-light-secondary-300,
+  400: $nx-light-secondary-400,
+  //500 is our primary accent.
+  500: $nx-light-secondary-500,
+  600: $nx-light-secondary-600,
+  700: $nx-light-secondary-700,
+  800: $nx-light-secondary-800,
+  900: $nx-light-secondary-900,
+  contrast: (
+    50: $nx-black,
+    100: $nx-black,
+    200: $nx-black,
+    300: $nx-black,
+    400: $nx-white,
+    500: $nx-white,
+    600: $nx-white,
+    700: $nx-white,
+    800: $nx-white,
+    900: $nx-white,
+  ),
+);

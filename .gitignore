@@ -47,3 +47,6 @@ Thumbs.db
 src/real_styles.scss
 src/styles_scss.txt
 src/styles_note.txt
+src/bw-common-palettes.scss
+src/bw-dark-palettes.scss
+src/bw-light-palettes.scss
