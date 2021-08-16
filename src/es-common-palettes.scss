@@ -8,22 +8,22 @@ $nx-white: #ffffff;
 
 
 
-// $nx-saturations-scheme: (
-//   nx-black: $nx-black,
-//   nx-dark-grey: $nx-dark-grey,
-//   nx-grey: $nx-grey,
-//   nx-light-grey: $nx-light-grey,
-//   nx-washed-grey: $nx-washed-grey,
-//   nx-white: $nx-white,
-//   contrast: (
-//     nx-black: $nx-white,
-//     nx-dark-grey: $nx-white,
-//     nx-grey: $nx-white,
-//     nx-light-grey: $nx-black,
-//     nx-washed-grey: $nx-black,
-//     nx-white: $nx-black,
-//   ),
-// );
+$nx-greys-scheme: (
+  nx-black: $nx-black,
+  nx-dark-grey: $nx-dark-grey,
+  nx-grey: $nx-grey,
+  nx-light-grey: $nx-light-grey,
+  nx-washed-grey: $nx-washed-grey,
+  nx-white: $nx-white,
+  contrast: (
+    nx-black: $nx-white,
+    nx-dark-grey: $nx-white,
+    nx-grey: $nx-white,
+    nx-light-grey: $nx-black,
+    nx-washed-grey: $nx-black,
+    nx-white: $nx-black,
+  ),
+);
 
 
 // //Angular Material calls red/error "warn"... yay :|
@@ -53,27 +53,29 @@ $nx-warn-scheme: (
 
 // green
 //rgba(97, 187, 75, 100) == #61bb4b
-$nx-success-10-pct: rgba(97, 187, 75, 10);
-$nx-success-25-pct: rgba(97, 187, 75, 25);
-$nx-success-50-pct: rgba(97, 187, 75, 50);
-$nx-success-75-pct: rgba(97, 187, 75, 75);
+$nx-success-10-pct: rgba(97, 187, 75, .10);
+$nx-success-25-pct: rgba(97, 187, 75, .25);
+$nx-success-50-pct: rgba(97, 187, 75, .50);
+$nx-success-75-pct: rgba(97, 187, 75, .75);
 $nx-success-100-pct: rgba(97, 187, 75, 100);
 
 // // you must include the contrast colors!
-// $nx-success-scheme: (
-//   100: $nx-success-10-pct,
-//   300: $nx-success-25-pct,
-//   500: $nx-success-50-pct,
-//   700: $nx-success-75-pct,
-//   900: $nx-success-100-pct,
-//   contrast: (
-//     100: $nx-white,
-//     300: $nx-white,
-//     500: $nx-white,
-//     700: $nx-white,
-//     900: $nx-white,
-//   ),
-// );
+$nx-success-scheme: (
+  100: $nx-success-10-pct,
+  300: $nx-success-25-pct,
+  500: $nx-success-50-pct,
+  700: $nx-success-75-pct,
+  900: $nx-success-100-pct,
+  nx-success: $nx-success-100-pct,
+  contrast: (
+    100: $nx-white,
+    300: $nx-white,
+    500: $nx-white,
+    700: $nx-white,
+    900: $nx-white,
+    nx-success: $nx-white
+  ),
+);
 
 //yellow
 //rgba(255, 179, 93, 100) = #FFB35D

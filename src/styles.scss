@@ -69,7 +69,8 @@ $nx-warn-palette: mat-palette($nx-warn-scheme); //<< or you can use your own.
 
 //For the other colors (info, success) that aren't a part of the theme elements (primary, access, warn)
 //you can create a palette here
-$nx-other-palette: mat-palette($nx-custom-scheme, custom);
+//$nx-greys-palette: mat-palette($nx-greys-scheme, custom);
+$nx-success-palette: mat-palette($nx-success-scheme, custom);
 
 ///////////////////////////////// START Create 'theme' from palettes /////////////////////////////////////////////////// // //
 
@@ -93,14 +94,14 @@ $nx-light-theme: mat-light-theme(
 $nx-light-theme: map_merge(
   $nx-light-theme,
   (
-    custom: $nx-other-palette,
+    custom: $nx-success-palette,
   )
 );
 
 // After this you have one object where every color is located.
 // And may I suggest you make general custom object for this like this
 $nx-custom: map-get($nx-light-theme, custom);
-$nx-greys: map-get($nx-light-theme, custom);
+//$nx-greys: map-get($nx-light-theme, greys);
 $nx-light-primaries: map-get($nx-light-theme, primary);
 $nx-light-accents: map-get($nx-light-theme, accent);
 
@@ -122,29 +123,59 @@ button.nx-caution {
   color: mat-color($nx-custom, nx-caution-contrast);
 }
 
+
+//accessing all of the success-variants same way here:
+button.nx-success-100 {
+  background-color: mat-color($nx-custom, 100);
+  color: mat-color($nx-custom, '100-contrast');
+}
+button.nx-success-300 {
+  // background-color: mat-color($nx-custom, 300);
+  // color: mat-color($nx-custom, '300-contrast');
+  background-color: $nx-success-25-pct;
+  color: $nx-white;
+}
+button.nx-success-500 {
+  // background-color: mat-color($nx-custom, 300);
+  // color: mat-color($nx-custom, '300-contrast');
+  background-color: rgba($nx-success, .5);
+  color: $nx-white;
+}
+button.nx-success-700 {
+  // background-color: mat-color($nx-custom, 300);
+  // color: mat-color($nx-custom, '300-contrast');
+  background-color: rgba($nx-success, .75);
+  color: $nx-white;
+}
+button.nx-success-900 {
+  background-color: mat-color($nx-custom, nx-success);
+  color: mat-color($nx-custom, nx-success-contrast);
+}
+
+
 button.nx-black {
-  background-color: mat-color($nx-greys, nx-black);
-  color: mat-color($nx-greys, nx-black-contrast);
+  background-color: mat-color($nx-custom, nx-black);
+  color: mat-color($nx-custom, nx-black-contrast);
 }
 button.nx-dark-grey {
-  background-color: mat-color($nx-greys, nx-dark-grey);
-  color: mat-color($nx-greys, nx-dark-grey-contrast);
+  background-color: mat-color($nx-custom, nx-dark-grey);
+  color: mat-color($nx-custom, nx-dark-grey-contrast);
 }
 button.nx-grey {
-  background-color: mat-color($nx-greys, nx-grey);
-  color: mat-color($nx-greys, nx-grey-contrast);
+  background-color: mat-color($nx-custom, nx-grey);
+  color: mat-color($nx-custom, nx-grey-contrast);
 }
 button.nx-light-grey {
-  background-color: mat-color($nx-greys, nx-light-grey);
-  color: mat-color($nx-greys, nx-light-grey-contrast);
+  background-color: mat-color($nx-custom, nx-light-grey);
+  color: mat-color($nx-custom, nx-light-grey-contrast);
 }
 button.nx-washed-grey {
-  background-color: mat-color($nx-greys, nx-washed-grey);
-  color: mat-color($nx-greys, nx-washed-grey-contrast);
+  background-color: mat-color($nx-custom, nx-washed-grey);
+  color: mat-color($nx-custom, nx-washed-grey-contrast);
 }
 button.nx-white {
-  background-color: mat-color($nx-greys, nx-white);
-  color: mat-color($nx-greys, nx-white-contrast);
+  background-color: mat-color($nx-custom, nx-white);
+  color: mat-color($nx-custom, nx-white-contrast);
 }
 
 //accessing all of the primary-variants same way here:
@@ -230,6 +261,7 @@ button.nx-secondary-900 {
   background-color: mat-color($nx-light-accents, 900);
   color: mat-color($nx-light-accents, '900-contrast');
 }
+
 // #endregion
 //// ////////////// END custom other colors in theme
 

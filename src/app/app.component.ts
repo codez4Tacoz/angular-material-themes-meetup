@@ -34,8 +34,6 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    //TODO JANEL or maybe something like this would be easier:  <link rel="stylesheet" href="/theme/css/dark-theme.min.css" *ngIf="setMode">
-
     this.toggleControl.valueChanges.subscribe((useDarkMode) => {
       const darkClassName = 'darkMode';
       this.className = useDarkMode ? darkClassName : '';
