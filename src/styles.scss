@@ -448,44 +448,188 @@ $nx-dark-primaries: map-get($nx-dark-theme, primary);
 $nx-dark-accents: map-get($nx-dark-theme, accent);
 
 //#region custom css classes
-// Then you can use it in your component like this
-button.nx-success.darkMode {
-  background-color: mat-color($nx-dark-custom, nx-success);
-  color: mat-color($nx-dark-custom, nx-success-contrast);
-}
-button.nx-info.darkMode  {
-  background-color: mat-color($nx-dark-custom, nx-info);
-  color: mat-color($nx-dark-custom, nx-info-contrast);
-}
-button.nx-caution.darkMode  {
-  background-color: mat-color($nx-dark-custom, nx-caution);
-  color: mat-color($nx-dark-custom, nx-caution-contrast);
+
+.darkMode {
+
+      //accessing all of the success-variants same way here:
+      //option1: pull from the theme
+      button.nx-success {
+        background-color: mat-color($nx-success-scheme, nx-success);
+        color: mat-color($nx-success-scheme, nx-success-contrast);
+      }
+      button.nx-success-100 {
+        background-color: mat-color($nx-success-scheme, 100);
+        color: mat-color($nx-success-scheme, '100-contrast');
+      }
+      //option2: use the color variables directly
+      button.nx-success-300 {
+        background-color: $nx-success-300;
+        color: $nx-success-300-contrast;
+      }
+      button.nx-success-500 {
+        background-color: $nx-success-500;
+        color: $nx-success-500-contrast;
+      }
+      button.nx-success-700 {
+        background-color: $nx-success-700;
+        color: $nx-success-700-contrast;
+      }
+      button.nx-success-900 {
+        background-color: $nx-success-900;
+        color: $nx-success-900-contrast;
+      }
+
+      //accessing all of the warn-variants same way here:
+      //option1: pull from the theme
+      button.nx-warn {
+        background-color: mat-color($nx-warn-scheme, nx-warn);
+        color: mat-color($nx-warn-scheme, nx-warn-contrast);
+      }
+      button.nx-warn-100 {
+        background-color: mat-color($nx-warn-scheme, 100);
+        color: mat-color($nx-warn-scheme, '100-contrast');
+      }
+      //option2: use the color variables directly
+      button.nx-warn-300 {
+        background-color: $nx-warn-300;
+        color: $nx-warn-300-contrast;
+      }
+      button.nx-warn-500 {
+        background-color: $nx-warn-500;
+        color: $nx-warn-500-contrast;
+      }
+      button.nx-warn-700 {
+        background-color: $nx-warn-700;
+        color: $nx-warn-700-contrast;
+      }
+      button.nx-warn-900 {
+        background-color: $nx-warn-900;
+        color: $nx-warn-900-contrast;
+      }
+
+
+      //accessing all of the warn-variants same way here:
+      //option1: pull from the theme
+      button.nx-info {
+        background-color: mat-color($nx-info-scheme, nx-info);
+        color: mat-color($nx-info-scheme, nx-info-contrast);
+      }
+      button.nx-info-100 {
+        background-color: mat-color($nx-info-scheme, 100);
+        color: mat-color($nx-info-scheme, '100-contrast');
+      }
+      //option2: use the color variables directly
+      button.nx-info-300 {
+        background-color: $nx-info-300;
+        color: $nx-info-300-contrast;
+      }
+      button.nx-info-500 {
+        background-color: $nx-info-500;
+        color: $nx-info-500-contrast;
+      }
+      button.nx-info-700 {
+        background-color: $nx-info-700;
+        color: $nx-info-700-contrast;
+      }
+      button.nx-info-900 {
+        background-color: $nx-info-900;
+        color: $nx-info-900-contrast;
+      }
+
+
+      //accessing all of the warn-variants same way here:
+      //option1: pull from the theme
+      button.nx-caution {
+        background-color: mat-color($nx-caution-scheme, nx-caution);
+        color: mat-color($nx-caution-scheme, nx-caution-contrast);
+      }
+      button.nx-caution-100 {
+        background-color: mat-color($nx-caution-scheme, 100);
+        color: mat-color($nx-caution-scheme, '100-contrast');
+      }
+      //option2: use the color variables directly
+      button.nx-caution-300 {
+        background-color: $nx-caution-300;
+        color: $nx-caution-300-contrast;
+      }
+      button.nx-caution-500 {
+        background-color: $nx-caution-500;
+        color: $nx-caution-500-contrast;
+      }
+      button.nx-caution-700 {
+        background-color: $nx-caution-700;
+        color: $nx-caution-700-contrast;
+      }
+      button.nx-caution-900 {
+        background-color: $nx-caution-900;
+        color: $nx-caution-900-contrast;
+      }
+
+
+      button.nx-black {
+        background-color: mat-color($nx-grey-scheme, nx-black);
+        color: mat-color($nx-grey-scheme, nx-black-contrast);
+      }
+      button.nx-dark-grey {
+        background-color: mat-color($nx-grey-scheme, nx-dark-grey);
+        color: mat-color($nx-grey-scheme, nx-dark-grey-contrast);
+      }
+      button.nx-grey {
+        background-color: mat-color($nx-grey-scheme, nx-grey);
+        color: mat-color($nx-grey-scheme, nx-grey-contrast);
+      }
+      button.nx-light-grey {
+        background-color: mat-color($nx-grey-scheme, nx-light-grey);
+        color: mat-color($nx-grey-scheme, nx-light-grey-contrast);
+      }
+      button.nx-washed-grey {
+        background-color: mat-color($nx-grey-scheme, nx-washed-grey);
+        color: mat-color($nx-grey-scheme, nx-washed-grey-contrast);
+      }
+      button.nx-white {
+        background-color: mat-color($nx-grey-scheme, nx-white);
+        color: mat-color($nx-grey-scheme, nx-white-contrast);
+      }
 }
 
-button.nx-black.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-black);
-  color: mat-color($nx-dark-greys, nx-black-contrast);
-}
-button.nx-dark-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-dark-grey);
-  color: mat-color($nx-dark-greys, nx-dark-grey-contrast);
-}
-button.nx-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-grey);
-  color: mat-color($nx-dark-greys, nx-grey-contrast);
-}
-button.nx-light-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-light-grey);
-  color: mat-color($nx-dark-greys, nx-light-grey-contrast);
-}
-button.nx-washed-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-washed-grey);
-  color: mat-color($nx-dark-greys, nx-washed-grey-contrast);
-}
-button.nx-white.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-white);
-  color: mat-color($nx-dark-greys, nx-white-contrast);
-}
+// Then you can use it in your component like this
+// button.nx-success.darkMode {
+//   background-color: mat-color($nx-dark-custom, nx-success);
+//   color: mat-color($nx-dark-custom, nx-success-contrast);
+// }
+// button.nx-info.darkMode  {
+//   background-color: mat-color($nx-dark-custom, nx-info);
+//   color: mat-color($nx-dark-custom, nx-info-contrast);
+// }
+// button.nx-caution.darkMode  {
+//   background-color: mat-color($nx-dark-custom, nx-caution);
+//   color: mat-color($nx-dark-custom, nx-caution-contrast);
+// }
+
+// button.nx-black.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-black);
+//   color: mat-color($nx-dark-greys, nx-black-contrast);
+// }
+// button.nx-dark-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-dark-grey);
+//   color: mat-color($nx-dark-greys, nx-dark-grey-contrast);
+// }
+// button.nx-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-grey);
+//   color: mat-color($nx-dark-greys, nx-grey-contrast);
+// }
+// button.nx-light-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-light-grey);
+//   color: mat-color($nx-dark-greys, nx-light-grey-contrast);
+// }
+// button.nx-washed-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-washed-grey);
+//   color: mat-color($nx-dark-greys, nx-washed-grey-contrast);
+// }
+// button.nx-white.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-white);
+//   color: mat-color($nx-dark-greys, nx-white-contrast);
+// }
 
 //accessing all of the primary-variants same way here:
 button.nx-primary-50.darkMode {
