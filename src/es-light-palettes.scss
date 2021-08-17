@@ -25,6 +25,30 @@ $nx-light-secondary-800: #1A3F5E;
 $nx-light-secondary-900: #173753;
 
 
+$nx-light-primary-50-contrast: $nx-black;
+$nx-light-primary-100-contrast: $nx-black;
+$nx-light-primary-200-contrast: $nx-black;
+$nx-light-primary-300-contrast: $nx-black;
+
+$nx-light-primary-400-contrast: $nx-white;
+$nx-light-primary-500-contrast: $nx-white;
+$nx-light-primary-600-contrast: $nx-white;
+$nx-light-primary-700-contrast: $nx-white;
+$nx-light-primary-800-contrast: $nx-white;
+$nx-light-primary-900-contrast: $nx-white;
+
+$nx-light-secondary-50-contrast: $nx-black;
+$nx-light-secondary-100-contrast: $nx-black;
+$nx-light-secondary-200-contrast: $nx-black;
+$nx-light-secondary-300-contrast: $nx-black;
+
+$nx-light-secondary-400-contrast: $nx-white;
+$nx-light-secondary-500-contrast: $nx-white;
+$nx-light-secondary-600-contrast: $nx-white;
+$nx-light-secondary-700-contrast: $nx-white;
+$nx-light-secondary-800-contrast: $nx-white;
+$nx-light-secondary-900-contrast: $nx-white;
+
 $nx-light-primary-scheme: (
   50: $nx-light-primary-50,
   100: $nx-light-primary-100,
@@ -38,16 +62,16 @@ $nx-light-primary-scheme: (
   800: $nx-light-primary-800,
   900: $nx-light-primary-900,
   contrast: (
-    50: $nx-black,
-    100: $nx-black,
-    200: $nx-black,
-    300: $nx-black,
-    400: $nx-white,
-    500: $nx-white,
-    600: $nx-white,
-    700: $nx-white,
-    800: $nx-white,
-    900: $nx-white,
+    50: $nx-light-primary-50-contrast,
+    100: $nx-light-primary-100-contrast,
+    200: $nx-light-primary-200-contrast,
+    300: $nx-light-primary-300-contrast,
+    400: $nx-light-primary-400-contrast,
+    500: $nx-light-primary-500-contrast,
+    600: $nx-light-primary-600-contrast,
+    700: $nx-light-primary-700-contrast,
+    800: $nx-light-primary-800-contrast,
+    900: $nx-light-primary-900-contrast,
   ),
 );
 
@@ -57,22 +81,22 @@ $nx-light-accent-scheme: (
   200: $nx-light-secondary-200,
   300: $nx-light-secondary-300,
   400: $nx-light-secondary-400,
-  //500 is our primary accent.
+  //500 is our secondary accent.
   500: $nx-light-secondary-500,
   600: $nx-light-secondary-600,
   700: $nx-light-secondary-700,
   800: $nx-light-secondary-800,
   900: $nx-light-secondary-900,
   contrast: (
-    50: $nx-black,
-    100: $nx-black,
-    200: $nx-black,
-    300: $nx-black,
-    400: $nx-white,
-    500: $nx-white,
-    600: $nx-white,
-    700: $nx-white,
-    800: $nx-white,
-    900: $nx-white,
+    50: $nx-light-secondary-50-contrast,
+    100: $nx-light-secondary-100-contrast,
+    200: $nx-light-secondary-200-contrast,
+    300: $nx-light-secondary-300-contrast,
+    400: $nx-light-secondary-400-contrast,
+    500: $nx-light-secondary-500-contrast,
+    600: $nx-light-secondary-600-contrast,
+    700: $nx-light-secondary-700-contrast,
+    800: $nx-light-secondary-800-contrast,
+    900: $nx-light-secondary-900-contrast,
   ),
 );
