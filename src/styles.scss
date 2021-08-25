@@ -7,6 +7,8 @@
 @import './bw-light-palettes.scss';
 @import './bw-dark-palettes.scss';
 @import './bw-common-palettes.scss';
+@import './bw-light-custom-palettes.scss';
+@import './bw-dark-custom-palettes.scss';
 
 // Plus imports for other components in your app.
 
@@ -40,13 +42,14 @@ $custom-typography: mat-typography-config(
 $nx-light-primary-palette: mat-palette($nx-light-primary-scheme, 600, 50, 900);
 $nx-light-accent-palette: mat-palette($nx-light-accent-scheme, 500, 50, 900);
 //$nx-warn-scheme:    mat-palette($mat-red);  //<< you can make a palette out of their pre-defined colors
-$nx-warn-palette: mat-palette($nx-warn-scheme, 900, 50, 900); //<< or you can use your own.
+$nx-light-warn-palette: mat-palette($nx-light-warn-scheme, 900, 50, 900); //<< or you can use your own.
 
 //For the other colors (info, success) that aren't a part of the theme elements (primary, access, warn)
 //you can create a palette here
 $nx-grey-palette: mat-palette($nx-grey-scheme, greys);
-$nx-success-palette: mat-palette($nx-success-scheme, successes);
-$nx-info-palette: mat-palette($nx-info-scheme, infos);
+$nx-light-success-palette: mat-palette($nx-light-success-scheme, successes);
+$nx-light-info-palette: mat-palette($nx-light-info-scheme, infos);
+$nx-light-caution-palette: mat-palette($nx-light-caution-scheme, cautions);
 
 ///////////////////////////////// START Create 'theme' from palettes /////////////////////////////////////////////////// // //
 
@@ -60,7 +63,7 @@ $nx-light-theme: mat-light-theme(
     color: (
       primary: $nx-light-primary-palette,
       accent: $nx-light-accent-palette,
-      warn: $nx-warn-palette,
+      warn: $nx-light-warn-palette,
     ),
   )
 );
@@ -77,13 +80,14 @@ $nx-light-theme: mat-light-theme(
 $nx-light-theme: map_merge(
   $nx-light-theme,
   (
-    success: $nx-success-palette,
+    success: $nx-light-success-palette,
     greys: $nx-grey-palette,
-    infos: $nx-info-palette,
+    infos: $nx-light-info-palette,
+    cautions: $nx-light-caution-palette
   )
 );
 
-
+//TODO Janel
 //so on second thought... this appears to just be pulling the color-scheme object back out of the theme
 // $nx-successes: map-get($nx-light-theme, successes);
 // $nx-warns: map-get($nx-light-theme, warn);
@@ -95,7 +99,9 @@ $nx-light-accents: map-get($nx-light-theme, accent);
 //@debug 'Property nx-primaries: #{$nx-light-primaries}';
 //@debug 'Property nx-light-theme: #{$nx-light-theme}';
 
-@import './bw-button-styles.scss';
+
+//TODO JANel move this import
+@import './button-styles.scss';
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -109,31 +115,31 @@ $nx-light-accents: map-get($nx-light-theme, accent);
 
 //#region primary, accent, custom, and warn colors for dark mode
 
-//TODO Janel remove
-$nx-custom-scheme: (
-  nx-caution: $nx-caution,
-  nx-success: $nx-success,
-  nx-warn: $nx-warn,
-  nx-info: $nx-info,
-  nx-black: $nx-black,
-  nx-dark-grey: $nx-dark-grey,
-  nx-grey: $nx-grey,
-  nx-light-grey: $nx-light-grey,
-  nx-washed-grey: $nx-washed-grey,
-  nx-white: $nx-white,
-  contrast: (
-    nx-caution: $nx-white,
-    nx-success: $nx-white,
-    nx-warn: $nx-white,
-    nx-info: $nx-white,
-    nx-black: $nx-white,
-    nx-dark-grey: $nx-white,
-    nx-grey: $nx-white,
-    nx-light-grey: $nx-black,
-    nx-washed-grey: $nx-black,
-    nx-white: $nx-black,
-  ),
-);
+// //TODO Janel remove
+// $nx-custom-scheme: (
+//   nx-caution: $nx-caution,
+//   nx-success: $nx-success,
+//   nx-warn: $nx-warn,
+//   nx-info: $nx-info,
+//   nx-black: $nx-black,
+//   nx-dark-grey: $nx-dark-grey,
+//   nx-grey: $nx-grey,
+//   nx-light-grey: $nx-light-grey,
+//   nx-washed-grey: $nx-washed-grey,
+//   nx-white: $nx-white,
+//   contrast: (
+//     nx-caution: $nx-white,
+//     nx-success: $nx-white,
+//     nx-warn: $nx-white,
+//     nx-info: $nx-white,
+//     nx-black: $nx-white,
+//     nx-dark-grey: $nx-white,
+//     nx-grey: $nx-white,
+//     nx-light-grey: $nx-black,
+//     nx-washed-grey: $nx-black,
+//     nx-white: $nx-black,
+//   ),
+// );
 
 
 //TODO Janel remove
@@ -189,11 +195,17 @@ $nx-dark-accent-palette: mat-palette($nx-dark-accent-scheme, 500, 50, 900);
 //TODO Janel when you don't specify the main, lighter & darker here then the light vs dark themes are by default different
 //should probably do something similar
 //$nx-dark-warn-palette: mat-palette($nx-warn-scheme);
-$nx-dark-warn-palette: mat-palette($nx-warn-scheme, 900, 500, 900); //<< or you can use your own.
+$nx-dark-warn-palette: mat-palette($nx-dark-warn-scheme, 900, 500, 900); //<< or you can use your own.
+
+// //For the other colors (info, success) that aren't a part of the theme elements (primary, access, warn)
+// //you can create a palette here
+// $nx-dark-custom-palette: mat-palette($nx-custom-scheme, custom);
 
 //For the other colors (info, success) that aren't a part of the theme elements (primary, access, warn)
 //you can create a palette here
-$nx-dark-custom-palette: mat-palette($nx-custom-scheme, custom);
+$nx-dark-success-palette: mat-palette($nx-dark-success-scheme, successes);
+$nx-dark-info-palette: mat-palette($nx-dark-info-scheme, infos);
+$nx-dark-caution-palette: mat-palette($nx-dark-caution-scheme, cautions);
 
 ////////////// START Create 'theme' from palettes ////////////// // //
 
@@ -212,276 +224,287 @@ $nx-dark-theme: mat-dark-theme(
 $nx-dark-theme: map_merge(
   $nx-dark-theme,
   (
-    custom: $nx-dark-custom-palette,
+    // custom: $nx-dark-custom-palette,
+    successes: $nx-dark-success-palette,
+    greys: $nx-grey-palette,
+    infos: $nx-dark-info-palette,
+    cautions: $nx-dark-caution-palette
   )
 );
 
 //TODO Janel get rid of these duplicate schemes
 // After this you have one object where every color is located.
 // And may I suggest you make general custom object for this like this
-$nx-dark-custom: map-get($nx-dark-theme, custom);
-$nx-dark-greys: map-get($nx-dark-theme, custom);
-$nx-dark-primaries: map-get($nx-dark-theme, primary);
-$nx-dark-accents: map-get($nx-dark-theme, accent);
+// $nx-dark-custom: map-get($nx-dark-theme, custom);
+// $nx-dark-greys: map-get($nx-dark-theme, custom);
+// $nx-dark-primaries: map-get($nx-dark-theme, primary);
+// $nx-dark-accents: map-get($nx-dark-theme, accent);
 
-//#region custom css classes
+// //#region custom css classes
 
-//TODO janel use nesting here to not have to duplicate all these classes
+
 .darkMode {
-
-      //accessing all of the success-variants same way here:
-      //option1: pull from the theme
-      button.nx-success {
-        background-color: mat-color($nx-success-scheme, nx-success);
-        color: mat-color($nx-success-scheme, nx-success-contrast);
-      }
-      button.nx-success-100 {
-        background-color: mat-color($nx-success-scheme, 100);
-        color: mat-color($nx-success-scheme, '100-contrast');
-      }
-      //option2: use the color variables directly
-      button.nx-success-300 {
-        background-color: $nx-success-300;
-        color: $nx-success-300-contrast;
-      }
-      button.nx-success-500 {
-        background-color: $nx-success-500;
-        color: $nx-success-500-contrast;
-      }
-      button.nx-success-700 {
-        background-color: $nx-success-700;
-        color: $nx-success-700-contrast;
-      }
-      button.nx-success-900 {
-        background-color: $nx-success-900;
-        color: $nx-success-900-contrast;
-      }
-
-      //accessing all of the warn-variants same way here:
-      //option1: pull from the theme
-      button.nx-warn {
-        background-color: mat-color($nx-warn-scheme, nx-warn);
-        color: mat-color($nx-warn-scheme, nx-warn-contrast);
-      }
-      button.nx-warn-100 {
-        background-color: mat-color($nx-warn-scheme, 100);
-        color: mat-color($nx-warn-scheme, '100-contrast');
-      }
-      //option2: use the color variables directly
-      button.nx-warn-300 {
-        background-color: $nx-warn-300;
-        color: $nx-warn-300-contrast;
-      }
-      button.nx-warn-500 {
-        background-color: $nx-warn-500;
-        color: $nx-warn-500-contrast;
-      }
-      button.nx-warn-700 {
-        background-color: $nx-warn-700;
-        color: $nx-warn-700-contrast;
-      }
-      button.nx-warn-900 {
-        background-color: $nx-warn-900;
-        color: $nx-warn-900-contrast;
-      }
-
-
-      //accessing all of the warn-variants same way here:
-      //option1: pull from the theme
-      button.nx-info {
-        background-color: mat-color($nx-info-scheme, nx-info);
-        color: mat-color($nx-info-scheme, nx-info-contrast);
-      }
-      button.nx-info-100 {
-        background-color: mat-color($nx-info-scheme, 100);
-        color: mat-color($nx-info-scheme, '100-contrast');
-      }
-      //option2: use the color variables directly
-      button.nx-info-300 {
-        background-color: $nx-info-300;
-        color: $nx-info-300-contrast;
-      }
-      button.nx-info-500 {
-        background-color: $nx-info-500;
-        color: $nx-info-500-contrast;
-      }
-      button.nx-info-700 {
-        background-color: $nx-info-700;
-        color: $nx-info-700-contrast;
-      }
-      button.nx-info-900 {
-        background-color: $nx-info-900;
-        color: $nx-info-900-contrast;
-      }
-
-
-      //accessing all of the warn-variants same way here:
-      //option1: pull from the theme
-      button.nx-caution {
-        background-color: mat-color($nx-caution-scheme, nx-caution);
-        color: mat-color($nx-caution-scheme, nx-caution-contrast);
-      }
-      button.nx-caution-100 {
-        background-color: mat-color($nx-caution-scheme, 100);
-        color: mat-color($nx-caution-scheme, '100-contrast');
-      }
-      //option2: use the color variables directly
-      button.nx-caution-300 {
-        background-color: $nx-caution-300;
-        color: $nx-caution-300-contrast;
-      }
-      button.nx-caution-500 {
-        background-color: $nx-caution-500;
-        color: $nx-caution-500-contrast;
-      }
-      button.nx-caution-700 {
-        background-color: $nx-caution-700;
-        color: $nx-caution-700-contrast;
-      }
-      button.nx-caution-900 {
-        background-color: $nx-caution-900;
-        color: $nx-caution-900-contrast;
-      }
-
-
-      // button.nx-black {
-      //   background-color: mat-color($nx-grey-scheme, nx-black);
-      //   color: mat-color($nx-grey-scheme, nx-black-contrast);
-      // }
-      // button.nx-dark-grey {
-      //   background-color: mat-color($nx-grey-scheme, nx-dark-grey);
-      //   color: mat-color($nx-grey-scheme, nx-dark-grey-contrast);
-      // }
-      // button.nx-grey {
-      //   background-color: mat-color($nx-grey-scheme, nx-grey);
-      //   color: mat-color($nx-grey-scheme, nx-grey-contrast);
-      // }
-      // button.nx-light-grey {
-      //   background-color: mat-color($nx-grey-scheme, nx-light-grey);
-      //   color: mat-color($nx-grey-scheme, nx-light-grey-contrast);
-      // }
-      // button.nx-washed-grey {
-      //   background-color: mat-color($nx-grey-scheme, nx-washed-grey);
-      //   color: mat-color($nx-grey-scheme, nx-washed-grey-contrast);
-      // }
-      // button.nx-white {
-      //   background-color: mat-color($nx-grey-scheme, nx-white);
-      //   color: mat-color($nx-grey-scheme, nx-white-contrast);
-      // }
+  //This is not actually making dark mode styles because
+  //button-styles is light mode specific for now
+  @import './button-styles.scss';
 }
 
-button.nx-black.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-black);
-  color: mat-color($nx-dark-greys, nx-black-contrast);
-}
-button.nx-dark-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-dark-grey);
-  color: mat-color($nx-dark-greys, nx-dark-grey-contrast);
-}
-button.nx-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-grey);
-  color: mat-color($nx-dark-greys, nx-grey-contrast);
-}
-button.nx-light-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-light-grey);
-  color: mat-color($nx-dark-greys, nx-light-grey-contrast);
-}
-button.nx-washed-grey.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-washed-grey);
-  color: mat-color($nx-dark-greys, nx-washed-grey-contrast);
-}
-button.nx-white.darkMode {
-  background-color: mat-color($nx-dark-greys, nx-white);
-  color: mat-color($nx-dark-greys, nx-white-contrast);
-}
+// //TODO janel use nesting here to not have to duplicate all these classes
+// .darkMode {
+
+//       //accessing all of the success-variants same way here:
+//       //option1: pull from the theme
+//       button.nx-success {
+//         background-color: mat-color($nx-success-scheme, nx-success);
+//         color: mat-color($nx-success-scheme, nx-success-contrast);
+//       }
+//       button.nx-success-100 {
+//         background-color: mat-color($nx-success-scheme, 100);
+//         color: mat-color($nx-success-scheme, '100-contrast');
+//       }
+//       //option2: use the color variables directly
+//       button.nx-success-300 {
+//         background-color: $nx-success-300;
+//         color: $nx-success-300-contrast;
+//       }
+//       button.nx-success-500 {
+//         background-color: $nx-success-500;
+//         color: $nx-success-500-contrast;
+//       }
+//       button.nx-success-700 {
+//         background-color: $nx-success-700;
+//         color: $nx-success-700-contrast;
+//       }
+//       button.nx-success-900 {
+//         background-color: $nx-success-900;
+//         color: $nx-success-900-contrast;
+//       }
+
+//       //accessing all of the warn-variants same way here:
+//       //option1: pull from the theme
+//       button.nx-warn {
+//         background-color: mat-color($nx-warn-scheme, nx-warn);
+//         color: mat-color($nx-warn-scheme, nx-warn-contrast);
+//       }
+//       button.nx-warn-100 {
+//         background-color: mat-color($nx-warn-scheme, 100);
+//         color: mat-color($nx-warn-scheme, '100-contrast');
+//       }
+//       //option2: use the color variables directly
+//       button.nx-warn-300 {
+//         background-color: $nx-warn-300;
+//         color: $nx-warn-300-contrast;
+//       }
+//       button.nx-warn-500 {
+//         background-color: $nx-warn-500;
+//         color: $nx-warn-500-contrast;
+//       }
+//       button.nx-warn-700 {
+//         background-color: $nx-warn-700;
+//         color: $nx-warn-700-contrast;
+//       }
+//       button.nx-warn-900 {
+//         background-color: $nx-warn-900;
+//         color: $nx-warn-900-contrast;
+//       }
+
+
+//       //accessing all of the warn-variants same way here:
+//       //option1: pull from the theme
+//       button.nx-info {
+//         background-color: mat-color($nx-info-scheme, nx-info);
+//         color: mat-color($nx-info-scheme, nx-info-contrast);
+//       }
+//       button.nx-info-100 {
+//         background-color: mat-color($nx-info-scheme, 100);
+//         color: mat-color($nx-info-scheme, '100-contrast');
+//       }
+//       //option2: use the color variables directly
+//       button.nx-info-300 {
+//         background-color: $nx-info-300;
+//         color: $nx-info-300-contrast;
+//       }
+//       button.nx-info-500 {
+//         background-color: $nx-info-500;
+//         color: $nx-info-500-contrast;
+//       }
+//       button.nx-info-700 {
+//         background-color: $nx-info-700;
+//         color: $nx-info-700-contrast;
+//       }
+//       button.nx-info-900 {
+//         background-color: $nx-info-900;
+//         color: $nx-info-900-contrast;
+//       }
+
+
+//       //accessing all of the warn-variants same way here:
+//       //option1: pull from the theme
+//       button.nx-caution {
+//         background-color: mat-color($nx-caution-scheme, nx-caution);
+//         color: mat-color($nx-caution-scheme, nx-caution-contrast);
+//       }
+//       button.nx-caution-100 {
+//         background-color: mat-color($nx-caution-scheme, 100);
+//         color: mat-color($nx-caution-scheme, '100-contrast');
+//       }
+//       //option2: use the color variables directly
+//       button.nx-caution-300 {
+//         background-color: $nx-caution-300;
+//         color: $nx-caution-300-contrast;
+//       }
+//       button.nx-caution-500 {
+//         background-color: $nx-caution-500;
+//         color: $nx-caution-500-contrast;
+//       }
+//       button.nx-caution-700 {
+//         background-color: $nx-caution-700;
+//         color: $nx-caution-700-contrast;
+//       }
+//       button.nx-caution-900 {
+//         background-color: $nx-caution-900;
+//         color: $nx-caution-900-contrast;
+//       }
+
+
+//       // button.nx-black {
+//       //   background-color: mat-color($nx-grey-scheme, nx-black);
+//       //   color: mat-color($nx-grey-scheme, nx-black-contrast);
+//       // }
+//       // button.nx-dark-grey {
+//       //   background-color: mat-color($nx-grey-scheme, nx-dark-grey);
+//       //   color: mat-color($nx-grey-scheme, nx-dark-grey-contrast);
+//       // }
+//       // button.nx-grey {
+//       //   background-color: mat-color($nx-grey-scheme, nx-grey);
+//       //   color: mat-color($nx-grey-scheme, nx-grey-contrast);
+//       // }
+//       // button.nx-light-grey {
+//       //   background-color: mat-color($nx-grey-scheme, nx-light-grey);
+//       //   color: mat-color($nx-grey-scheme, nx-light-grey-contrast);
+//       // }
+//       // button.nx-washed-grey {
+//       //   background-color: mat-color($nx-grey-scheme, nx-washed-grey);
+//       //   color: mat-color($nx-grey-scheme, nx-washed-grey-contrast);
+//       // }
+//       // button.nx-white {
+//       //   background-color: mat-color($nx-grey-scheme, nx-white);
+//       //   color: mat-color($nx-grey-scheme, nx-white-contrast);
+//       // }
+// }
+
+// button.nx-black.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-black);
+//   color: mat-color($nx-dark-greys, nx-black-contrast);
+// }
+// button.nx-dark-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-dark-grey);
+//   color: mat-color($nx-dark-greys, nx-dark-grey-contrast);
+// }
+// button.nx-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-grey);
+//   color: mat-color($nx-dark-greys, nx-grey-contrast);
+// }
+// button.nx-light-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-light-grey);
+//   color: mat-color($nx-dark-greys, nx-light-grey-contrast);
+// }
+// button.nx-washed-grey.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-washed-grey);
+//   color: mat-color($nx-dark-greys, nx-washed-grey-contrast);
+// }
+// button.nx-white.darkMode {
+//   background-color: mat-color($nx-dark-greys, nx-white);
+//   color: mat-color($nx-dark-greys, nx-white-contrast);
+// }
 
 
 
-//accessing all of the primary-variants same way here:
-button.nx-primary-50.darkMode {
-  background-color: mat-color($nx-dark-primaries, 50);
-  color: mat-color($nx-dark-primaries, '50-contrast');
-}
-button.nx-primary-100.darkMode {
-  background-color: mat-color($nx-dark-primaries, 100);
-  color: mat-color($nx-dark-primaries, '100-contrast');
-}
-button.nx-primary-200.darkMode {
-  background-color: mat-color($nx-dark-primaries, 200);
-  color: mat-color($nx-dark-primaries, '200-contrast');
-}
-button.nx-primary-300.darkMode {
-  background-color: mat-color($nx-dark-primaries, 300);
-  color: mat-color($nx-dark-primaries, '300-contrast');
-}
-button.nx-primary-400.darkMode {
-  background-color: mat-color($nx-dark-primaries, 400);
-  color: mat-color($nx-dark-primaries, '400-contrast');
-}
-button.nx-primary-500.darkMode {
-  background-color: mat-color($nx-dark-primaries, 500);
-  color: mat-color($nx-dark-primaries, '500-contrast');
-}
-button.nx-primary-600.darkMode {
-  background-color: mat-color($nx-dark-primaries, 600);
-  color: mat-color($nx-dark-primaries, '600-contrast');
-}
-button.nx-primary-700.darkMode {
-  background-color: mat-color($nx-dark-primaries, 700);
-  color: mat-color($nx-dark-primaries, '700-contrast');
-}
-button.nx-primary-800.darkMode {
-  background-color: mat-color($nx-dark-primaries, 800);
-  color: mat-color($nx-dark-primaries, '800-contrast');
-}
-button.nx-primary-900.darkMode {
-  background-color: mat-color($nx-dark-primaries, 900);
-  color: mat-color($nx-dark-primaries, '900-contrast');
-}
+// //accessing all of the primary-variants same way here:
+// button.nx-primary-50.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 50);
+//   color: mat-color($nx-dark-primaries, '50-contrast');
+// }
+// button.nx-primary-100.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 100);
+//   color: mat-color($nx-dark-primaries, '100-contrast');
+// }
+// button.nx-primary-200.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 200);
+//   color: mat-color($nx-dark-primaries, '200-contrast');
+// }
+// button.nx-primary-300.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 300);
+//   color: mat-color($nx-dark-primaries, '300-contrast');
+// }
+// button.nx-primary-400.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 400);
+//   color: mat-color($nx-dark-primaries, '400-contrast');
+// }
+// button.nx-primary-500.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 500);
+//   color: mat-color($nx-dark-primaries, '500-contrast');
+// }
+// button.nx-primary-600.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 600);
+//   color: mat-color($nx-dark-primaries, '600-contrast');
+// }
+// button.nx-primary-700.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 700);
+//   color: mat-color($nx-dark-primaries, '700-contrast');
+// }
+// button.nx-primary-800.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 800);
+//   color: mat-color($nx-dark-primaries, '800-contrast');
+// }
+// button.nx-primary-900.darkMode {
+//   background-color: mat-color($nx-dark-primaries, 900);
+//   color: mat-color($nx-dark-primaries, '900-contrast');
+// }
 
-//accessing all of the secondary-variants same way here:
-button.nx-secondary-50.darkMode {
-  background-color: mat-color($nx-dark-accents, 50);
-  color: mat-color($nx-dark-accents, '50-contrast');
-}
-button.nx-secondary-100.darkMode {
-  background-color: mat-color($nx-dark-accents, 100);
-  color: mat-color($nx-dark-accents, '100-contrast');
-}
-button.nx-secondary-200.darkMode {
-  background-color: mat-color($nx-dark-accents, 200);
-  color: mat-color($nx-dark-accents, '200-contrast');
-}
-button.nx-secondary-300.darkMode {
-  background-color: mat-color($nx-dark-accents, 300);
-  color: mat-color($nx-dark-accents, '300-contrast');
-}
-button.nx-secondary-400.darkMode {
-  background-color: mat-color($nx-dark-accents, 400);
-  color: mat-color($nx-dark-accents, '400-contrast');
-}
-button.nx-secondary-500.darkMode {
-  background-color: mat-color($nx-dark-accents, 500);
-  color: mat-color($nx-dark-accents, '500-contrast');
-}
-button.nx-secondary-600.darkMode {
-  background-color: mat-color($nx-dark-accents, 600);
-  color: mat-color($nx-dark-accents, '600-contrast');
-}
-button.nx-secondary-700.darkMode {
-  background-color: mat-color($nx-dark-accents, 700);
-  color: mat-color($nx-dark-accents, '700-contrast');
-}
-button.nx-secondary-800.darkMode {
-  background-color: mat-color($nx-dark-accents, 800);
-  color: mat-color($nx-dark-accents, '800-contrast');
-}
-button.nx-secondary-900.darkMode {
-  background-color: mat-color($nx-dark-accents, 900);
-  color: mat-color($nx-dark-accents, '900-contrast');
-}
-// #endregion
-//// ////////////// END custom other colors in theme
+// //accessing all of the secondary-variants same way here:
+// button.nx-secondary-50.darkMode {
+//   background-color: mat-color($nx-dark-accents, 50);
+//   color: mat-color($nx-dark-accents, '50-contrast');
+// }
+// button.nx-secondary-100.darkMode {
+//   background-color: mat-color($nx-dark-accents, 100);
+//   color: mat-color($nx-dark-accents, '100-contrast');
+// }
+// button.nx-secondary-200.darkMode {
+//   background-color: mat-color($nx-dark-accents, 200);
+//   color: mat-color($nx-dark-accents, '200-contrast');
+// }
+// button.nx-secondary-300.darkMode {
+//   background-color: mat-color($nx-dark-accents, 300);
+//   color: mat-color($nx-dark-accents, '300-contrast');
+// }
+// button.nx-secondary-400.darkMode {
+//   background-color: mat-color($nx-dark-accents, 400);
+//   color: mat-color($nx-dark-accents, '400-contrast');
+// }
+// button.nx-secondary-500.darkMode {
+//   background-color: mat-color($nx-dark-accents, 500);
+//   color: mat-color($nx-dark-accents, '500-contrast');
+// }
+// button.nx-secondary-600.darkMode {
+//   background-color: mat-color($nx-dark-accents, 600);
+//   color: mat-color($nx-dark-accents, '600-contrast');
+// }
+// button.nx-secondary-700.darkMode {
+//   background-color: mat-color($nx-dark-accents, 700);
+//   color: mat-color($nx-dark-accents, '700-contrast');
+// }
+// button.nx-secondary-800.darkMode {
+//   background-color: mat-color($nx-dark-accents, 800);
+//   color: mat-color($nx-dark-accents, '800-contrast');
+// }
+// button.nx-secondary-900.darkMode {
+//   background-color: mat-color($nx-dark-accents, 900);
+//   color: mat-color($nx-dark-accents, '900-contrast');
+// }
+// // #endregion
+// //// ////////////// END custom other colors in theme
 
 
 
