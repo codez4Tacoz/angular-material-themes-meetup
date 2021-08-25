@@ -1,4 +1,6 @@
 @mixin generateButtonStyles($property) {
+
+  //pull the color schemes back out of the theme
   $theme-successes: map-get($property, successes);
   $theme-infos: map-get($property, infos);
   $theme-cautions: map-get($property, cautions);

@@ -5,15 +5,17 @@ $nx-light-grey: #d8d8d8;
 $nx-washed-grey: #f8f8f8;
 $nx-white: #ffffff;
 
+$nx-black-contrast: $nx-white;
+$nx-dark-grey-contrast: $nx-white;
+$nx-grey-contrast: $nx-white;
+$nx-light-grey-contrast: $nx-black;
+$nx-washed-grey-contrast: $nx-black;
+$nx-white-contrast: $nx-black;
+
 $nx-info: #5ABFED;
 $nx-success: #61bb4b;
 $nx-caution: #FFB35D;
 $nx-warn: #ff797f;
-
-$nx-info-contrast: $nx-white;
-$nx-success-contrast: $nx-white;
-$nx-caution-contrast: $nx-white;
-$nx-warn-contrast: $nx-white;
 
 $opacity-10-pct: .10;
 $opacity-25-pct: .25;
@@ -28,141 +30,11 @@ $nx-grey-scheme: (
   nx-washed-grey: $nx-washed-grey,
   nx-white: $nx-white,
   contrast: (
-    nx-black: $nx-white,
-    nx-dark-grey: $nx-white,
-    nx-grey: $nx-white,
-    nx-light-grey: $nx-black,
-    nx-washed-grey: $nx-black,
-    nx-white: $nx-black,
+    nx-black: $nx-black-contrast,
+    nx-dark-grey: $nx-dark-grey-contrast,
+    nx-grey: $nx-grey-contrast,
+    nx-light-grey: $nx-light-grey-contrast,
+    nx-washed-grey: $nx-washed-grey-contrast,
+    nx-white: $nx-white-contrast,
   ),
 );
-
-
-// //Angular Material calls red/error "warn" rather than error... yay :|
-//red
-$nx-warn-100: rgba($nx-warn, $opacity-10-pct);
-$nx-warn-300: rgba($nx-warn, $opacity-25-pct);
-$nx-warn-500: rgba($nx-warn, $opacity-50-pct);
-$nx-warn-700: rgba($nx-warn, $opacity-75-pct);
-$nx-warn-900: $nx-warn;
-
-$nx-warn-contrast: $nx-white;
-$nx-warn-100-contrast: $nx-white;
-$nx-warn-300-contrast: $nx-white;
-$nx-warn-500-contrast: $nx-white;
-$nx-warn-700-contrast: $nx-white;
-$nx-warn-900-contrast: $nx-warn-contrast;
-
-$nx-warn-scheme: (
-  100: $nx-warn-100,
-  300: $nx-warn-300,
-  500: $nx-warn-500,
-  700: $nx-warn-700,
-  900: $nx-warn-900,
-  nx-warn: $nx-warn,
-  contrast: (
-    100: $nx-warn-100-contrast,
-    300: $nx-warn-300-contrast,
-    500: $nx-warn-500-contrast,
-    700: $nx-warn-700-contrast,
-    900: $nx-warn-900-contrast,
-    nx-warn: $nx-warn-contrast
-  ),
-);
-
-
-// green
-$nx-success-100: rgba($nx-success, $opacity-10-pct);
-$nx-success-300: rgba($nx-success, $opacity-25-pct);
-$nx-success-500: rgba($nx-success, $opacity-50-pct);
-$nx-success-700: rgba($nx-success, $opacity-75-pct);
-$nx-success-900: $nx-success;
-
-$nx-success-contrast: $nx-white;
-$nx-success-100-contrast: $nx-white;
-$nx-success-300-contrast: $nx-white;
-$nx-success-500-contrast: $nx-white;
-$nx-success-700-contrast: $nx-white;
-$nx-success-900-contrast: $nx-success-contrast;
-
-$nx-success-scheme: (
-  100: $nx-success-100,
-  300: $nx-success-300,
-  500: $nx-success-500,
-  700: $nx-success-700,
-  900: $nx-success-900,
-  nx-success: $nx-success,
-  contrast: (
-    100: $nx-success-100-contrast,
-    300: $nx-success-300-contrast,
-    500: $nx-success-500-contrast,
-    700: $nx-success-700-contrast,
-    900: $nx-success-900-contrast,
-    nx-success: $nx-success-contrast
-  ),
-);
-
-//yellow
-$nx-caution-100: rgba($nx-caution, $opacity-10-pct);
-$nx-caution-300: rgba($nx-caution, $opacity-25-pct);
-$nx-caution-500: rgba($nx-caution, $opacity-50-pct);
-$nx-caution-700: rgba($nx-caution, $opacity-75-pct);
-$nx-caution-900: $nx-caution;
-
-$nx-caution-contrast: $nx-white;
-$nx-caution-100-contrast: $nx-white;
-$nx-caution-300-contrast: $nx-white;
-$nx-caution-500-contrast: $nx-white;
-$nx-caution-700-contrast: $nx-white;
-$nx-caution-900-contrast: $nx-caution-contrast;
-
-$nx-caution-scheme: (
-  100: $nx-caution-100,
-  300: $nx-caution-300,
-  500: $nx-caution-500,
-  700: $nx-caution-700,
-  900: $nx-caution-900,
-  nx-caution: $nx-caution,
-  contrast: (
-    100: $nx-caution-100-contrast,
-    300: $nx-caution-300-contrast,
-    500: $nx-caution-500-contrast,
-    700: $nx-caution-700-contrast,
-    900: $nx-caution-900-contrast,
-    nx-caution: $nx-caution-contrast
-  ),
-);
-
-
-//blue
-$nx-info-100: rgba($nx-info, $opacity-10-pct);
-$nx-info-300: rgba($nx-info, $opacity-25-pct);
-$nx-info-500: rgba($nx-info, $opacity-50-pct);
-$nx-info-700: rgba($nx-info, $opacity-75-pct);
-$nx-info-900: $nx-info;
-
-$nx-info-contrast: $nx-white;
-$nx-info-100-contrast: $nx-white;
-$nx-info-300-contrast: $nx-white;
-$nx-info-500-contrast: $nx-white;
-$nx-info-700-contrast: $nx-white;
-$nx-info-900-contrast: $nx-info-contrast;
-
-$nx-info-scheme: (
-  100: $nx-info-100,
-  300: $nx-info-300,
-  500: $nx-info-500,
-  700: $nx-info-700,
-  900: $nx-info-900,
-  nx-info: $nx-info,
-  contrast: (
-    100: $nx-info-100-contrast,
-    300: $nx-info-300-contrast,
-    500: $nx-info-500-contrast,
-    700: $nx-info-700-contrast,
-    900: $nx-info-900-contrast,
-    nx-info: $nx-info-contrast
-  ),
-);
-
-
