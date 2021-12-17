@@ -1,0 +1,154 @@
+@import './bw-common-palettes.scss';
+
+$nx-light-info: $nx-info;
+$nx-light-success: $nx-success;
+$nx-light-caution: $nx-caution;
+$nx-light-warn: $nx-warn;
+
+$nx-light-info-contrast: $nx-white;
+$nx-light-success-contrast: $nx-white;
+$nx-light-caution-contrast: $nx-white;
+$nx-light-warn-contrast: $nx-white;
+
+// //Angular Material calls red/error "warn" rather than error... yay :|
+//red
+// nx-warn-900 is a synonym for nx-warn
+$nx-light-warn-100: rgba($nx-light-warn, $opacity-10-pct);
+$nx-light-warn-300: rgba($nx-light-warn, $opacity-25-pct);
+$nx-light-warn-500: rgba($nx-light-warn, $opacity-50-pct);
+$nx-light-warn-700: rgba($nx-light-warn, $opacity-75-pct);
+$nx-light-warn-900: $nx-light-warn;
+
+$nx-light-warn-100-contrast: $nx-white;
+$nx-light-warn-300-contrast: $nx-white;
+$nx-light-warn-500-contrast: $nx-white;
+$nx-light-warn-700-contrast: $nx-white;
+$nx-light-warn-900-contrast: $nx-light-warn-contrast;
+$nx-light-warn-contrast: $nx-white;
+
+$nx-light-warn-scheme: (
+  100: $nx-light-warn-100,
+  300: $nx-light-warn-300,
+  500: $nx-light-warn-500,
+  700: $nx-light-warn-700,
+  900: $nx-light-warn-900,
+  nx-warn: $nx-light-warn,
+  contrast: (
+    100: $nx-light-warn-100-contrast,
+    300: $nx-light-warn-300-contrast,
+    500: $nx-light-warn-500-contrast,
+    700: $nx-light-warn-700-contrast,
+    900: $nx-light-warn-900-contrast,
+    nx-warn: $nx-light-warn-contrast
+  ),
+);
+
+
+// green
+// nx-success-900 is a synonym for nx-success
+// nx-success-700 should not be used as a background for small/regular text,
+//    it has insufficient contrast.
+//    Should only be used for large text.
+$nx-light-success-100: rgba($nx-light-success, $opacity-10-pct);
+$nx-light-success-300: rgba($nx-light-success, $opacity-25-pct);
+$nx-light-success-500: rgba($nx-light-success, $opacity-50-pct);
+$nx-light-success-700: rgba($nx-light-success, $opacity-75-pct);
+$nx-light-success-900: $nx-light-success;
+
+$nx-light-success-100-contrast: $nx-white;
+$nx-light-success-300-contrast: $nx-white;
+$nx-light-success-500-contrast: $nx-white;
+$nx-light-success-700-contrast: $nx-white;
+$nx-light-success-900-contrast: $nx-light-success-contrast;
+$nx-light-success-contrast: $nx-white;
+
+$nx-light-success-scheme: (
+  100: $nx-light-success-100,
+  300: $nx-light-success-300,
+  500: $nx-light-success-500,
+  700: $nx-light-success-700,
+  900: $nx-light-success-900,
+  nx-success: $nx-light-success,
+  contrast: (
+    100: $nx-light-success-100-contrast,
+    300: $nx-light-success-300-contrast,
+    500: $nx-light-success-500-contrast,
+    700: $nx-light-success-700-contrast,
+    900: $nx-light-success-900-contrast,
+    nx-success: $nx-light-success-contrast
+  ),
+);
+
+//yellow
+// nx-caution-900 is a synonym for nx-caution
+// nx-caution-900 should not be used as a background for small/regular text,
+//    it has insufficient contrast.
+//    Should only be used for large text.
+$nx-light-caution-100: rgba($nx-light-caution, $opacity-10-pct);
+$nx-light-caution-300: rgba($nx-light-caution, $opacity-25-pct);
+$nx-light-caution-500: rgba($nx-light-caution, $opacity-50-pct);
+$nx-light-caution-700: rgba($nx-light-caution, $opacity-75-pct);
+$nx-light-caution-900: $nx-light-caution;
+
+$nx-light-caution-contrast: $nx-white;
+$nx-light-caution-100-contrast: $nx-white;
+$nx-light-caution-300-contrast: $nx-white;
+$nx-light-caution-500-contrast: $nx-white;
+$nx-light-caution-700-contrast: $nx-white;
+$nx-light-caution-900-contrast: $nx-light-caution-contrast;
+
+$nx-light-caution-scheme: (
+  100: $nx-light-caution-100,
+  300: $nx-light-caution-300,
+  500: $nx-light-caution-500,
+  700: $nx-light-caution-700,
+  900: $nx-light-caution-900,
+  nx-caution: $nx-light-caution,
+  contrast: (
+    100: $nx-light-caution-100-contrast,
+    300: $nx-light-caution-300-contrast,
+    500: $nx-light-caution-500-contrast,
+    700: $nx-light-caution-700-contrast,
+    900: $nx-light-caution-900-contrast,
+    nx-caution: $nx-light-caution-contrast
+  ),
+);
+
+
+//blue
+// nx-info-900 is a synonym for nx-info
+//  nx-info-500 and nx-info-700 should not be used as a background for small/regular text,
+//    it has insufficient contrast.
+//    Should only be used for large text.
+// nx-info-900 cannot be used as a text background, period.  fails all AA checks.
+$nx-light-info-100: rgba($nx-light-info, $opacity-10-pct);
+$nx-light-info-300: rgba($nx-light-info, $opacity-25-pct);
+$nx-light-info-500: rgba($nx-light-info, $opacity-50-pct);
+$nx-light-info-700: rgba($nx-light-info, $opacity-75-pct);
+$nx-light-info-900: $nx-light-info;
+
+$nx-light-info-100-contrast: $nx-white;
+$nx-light-info-300-contrast: $nx-white;
+$nx-light-info-500-contrast: $nx-white;
+$nx-light-info-700-contrast: $nx-white;
+$nx-light-info-contrast: $nx-white;
+$nx-light-info-900-contrast: $nx-light-info-contrast;
+
+$nx-light-info-scheme: (
+  100: $nx-light-info-100,
+  300: $nx-light-info-300,
+  500: $nx-light-info-500,
+  700: $nx-light-info-700,
+  900: $nx-light-info-900,
+  nx-info: $nx-light-info,
+  contrast: (
+    100: $nx-light-info-100-contrast,
+    300: $nx-light-info-300-contrast,
+    500: $nx-light-info-500-contrast,
+    700: $nx-light-info-700-contrast,
+    900: $nx-light-info-900-contrast,
+    nx-info: $nx-light-info-contrast
+  ),
+);
+
+

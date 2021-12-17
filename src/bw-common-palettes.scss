@@ -1,0 +1,40 @@
+$nx-black: #333;
+$nx-dark-grey: #6B6B6B;
+$nx-grey: #858585;
+$nx-light-grey: #CCCCCC;
+$nx-washed-grey: #F8F8F8;
+$nx-white: #ffffff;
+
+$nx-black-contrast: $nx-white;
+$nx-dark-grey-contrast: $nx-white;
+$nx-grey-contrast: $nx-white;
+$nx-light-grey-contrast: $nx-black;
+$nx-washed-grey-contrast: $nx-black;
+$nx-white-contrast: $nx-black;
+
+$nx-info: #007DAE;
+$nx-success: #2D841F;
+$nx-caution: #CF811C;
+$nx-warn: #D0021B;
+
+$opacity-10-pct: .10;
+$opacity-25-pct: .25;
+$opacity-50-pct: .50;
+$opacity-75-pct: .75;
+
+$nx-grey-scheme: (
+  nx-black: $nx-black,
+  nx-dark-grey: $nx-dark-grey,
+  nx-grey: $nx-grey,
+  nx-light-grey: $nx-light-grey,
+  nx-washed-grey: $nx-washed-grey,
+  nx-white: $nx-white,
+  contrast: (
+    nx-black: $nx-black-contrast,
+    nx-dark-grey: $nx-dark-grey-contrast,
+    nx-grey: $nx-grey-contrast,
+    nx-light-grey: $nx-light-grey-contrast,
+    nx-washed-grey: $nx-washed-grey-contrast,
+    nx-white: $nx-white-contrast,
+  ),
+);

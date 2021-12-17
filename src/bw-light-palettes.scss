@@ -1,0 +1,102 @@
+@import './bw-common-palettes.scss';
+
+// Blue Wave Theme
+// 400 and 500 primary colors can only be used with large text (insufficient WCAG contrast)
+$nx-light-primary-50: #e9f5fb;
+$nx-light-primary-100: #c5e5f5;
+$nx-light-primary-200: #92ceec;
+$nx-light-primary-300: #66bae5;
+$nx-light-primary-400: #3ca7de;
+$nx-light-primary-500: #218dc4;
+$nx-light-primary-600: #1d7eaf;
+$nx-light-primary-700: #15709e;
+$nx-light-primary-800: #0e618b;
+$nx-light-primary-900: #085277;
+
+$nx-light-secondary-50: #e0f4f6;
+$nx-light-secondary-100: #b3e5e9;
+$nx-light-secondary-200: #80d3da;
+$nx-light-secondary-300: #00a7b5;
+$nx-light-secondary-400: #0093a3;
+$nx-light-secondary-500: #007e8f;
+$nx-light-secondary-600: #007385;
+$nx-light-secondary-700: #006375;
+$nx-light-secondary-800: #005161;
+$nx-light-secondary-900: #003e4d;
+
+
+$nx-light-primary-50-contrast: $nx-black;
+$nx-light-primary-100-contrast: $nx-black;
+$nx-light-primary-200-contrast: $nx-black;
+$nx-light-primary-300-contrast: $nx-black;
+
+$nx-light-primary-400-contrast: $nx-white;
+$nx-light-primary-500-contrast: $nx-white;
+$nx-light-primary-600-contrast: $nx-white;
+$nx-light-primary-700-contrast: $nx-white;
+$nx-light-primary-800-contrast: $nx-white;
+$nx-light-primary-900-contrast: $nx-white;
+
+$nx-light-secondary-50-contrast: $nx-black;
+$nx-light-secondary-100-contrast: $nx-black;
+$nx-light-secondary-200-contrast: $nx-black;
+$nx-light-secondary-300-contrast: $nx-black;
+
+$nx-light-secondary-400-contrast: $nx-white;
+$nx-light-secondary-500-contrast: $nx-white;
+$nx-light-secondary-600-contrast: $nx-white;
+$nx-light-secondary-700-contrast: $nx-white;
+$nx-light-secondary-800-contrast: $nx-white;
+$nx-light-secondary-900-contrast: $nx-white;
+
+$nx-light-primary-scheme: (
+  50: $nx-light-primary-50,
+  100: $nx-light-primary-100,
+  200: $nx-light-primary-200,
+  300: $nx-light-primary-300,
+  400: $nx-light-primary-400,
+  500: $nx-light-primary-500,
+  // 600 is primary primary
+  600: $nx-light-primary-600,
+  700: $nx-light-primary-700,
+  800: $nx-light-primary-800,
+  900: $nx-light-primary-900,
+  contrast: (
+    50: $nx-light-primary-50-contrast,
+    100: $nx-light-primary-100-contrast,
+    200: $nx-light-primary-200-contrast,
+    300: $nx-light-primary-300-contrast,
+    400: $nx-light-primary-400-contrast,
+    500: $nx-light-primary-500-contrast,
+    600: $nx-light-primary-600-contrast,
+    700: $nx-light-primary-700-contrast,
+    800: $nx-light-primary-800-contrast,
+    900: $nx-light-primary-900-contrast,
+  ),
+);
+
+$nx-light-accent-scheme: (
+  50: $nx-light-secondary-50,
+  100: $nx-light-secondary-100,
+  200: $nx-light-secondary-200,
+  300: $nx-light-secondary-300,
+  400: $nx-light-secondary-400,
+  //500 is our primary accent.
+  500: $nx-light-secondary-500,
+  600: $nx-light-secondary-600,
+  700: $nx-light-secondary-700,
+  800: $nx-light-secondary-800,
+  900: $nx-light-secondary-900,
+  contrast: (
+    50: $nx-light-secondary-50-contrast,
+    100: $nx-light-secondary-100-contrast,
+    200: $nx-light-secondary-200-contrast,
+    300: $nx-light-secondary-300-contrast,
+    400: $nx-light-secondary-400-contrast,
+    500: $nx-light-secondary-500-contrast,
+    600: $nx-light-secondary-600-contrast,
+    700: $nx-light-secondary-700-contrast,
+    800: $nx-light-secondary-800-contrast,
+    900: $nx-light-secondary-900-contrast,
+  ),
+);

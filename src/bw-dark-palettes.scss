@@ -1,0 +1,106 @@
+@import './bw-common-palettes.scss';
+
+// Blue Wave Theme
+// 500 primary, 500 secondary
+$nx-dark-primary-50: #E8F4FB;
+$nx-dark-primary-100: #C5E5F5;
+$nx-dark-primary-200: #9ED3EF;
+$nx-dark-primary-300: #77C1E8;
+$nx-dark-primary-400: #59B4E3;
+$nx-dark-primary-500: #3CA7DE;
+$nx-dark-primary-600: #1F9FE0;
+$nx-dark-primary-700: #1691D0;
+$nx-dark-primary-800: #0E82BE;
+$nx-dark-primary-900: #0873AA;
+
+////
+$nx-dark-secondary-50: #E0F4F6;
+$nx-dark-secondary-100: #B3E5E9;
+$nx-dark-secondary-200: #80D3DA;
+$nx-dark-secondary-300: #4DC1CB;
+$nx-dark-secondary-400: #26B4C0;
+$nx-dark-secondary-500: #00A7B5;
+$nx-dark-secondary-600: #009FAE;
+$nx-dark-secondary-700: #0096A5;
+$nx-dark-secondary-800: #008C9D;
+$nx-dark-secondary-900: #007C8D;
+
+
+////
+$nx-dark-primary-50-contrast: $nx-black;
+$nx-dark-primary-100-contrast: $nx-black;
+$nx-dark-primary-200-contrast: $nx-black;
+$nx-dark-primary-300-contrast: $nx-black;
+$nx-dark-primary-400-contrast: $nx-black;
+//
+$nx-dark-primary-500-contrast: $nx-white;
+$nx-dark-primary-600-contrast: $nx-white;
+$nx-dark-primary-700-contrast: $nx-white;
+$nx-dark-primary-800-contrast: $nx-white;
+$nx-dark-primary-900-contrast: $nx-white;
+
+////
+$nx-dark-secondary-50-contrast: $nx-black;
+$nx-dark-secondary-100-contrast: $nx-black;
+$nx-dark-secondary-200-contrast: $nx-black;
+$nx-dark-secondary-300-contrast: $nx-black;
+//
+$nx-dark-secondary-400-contrast: $nx-white;
+$nx-dark-secondary-500-contrast: $nx-white;
+$nx-dark-secondary-600-contrast: $nx-white;
+$nx-dark-secondary-700-contrast: $nx-white;
+$nx-dark-secondary-800-contrast: $nx-white;
+$nx-dark-secondary-900-contrast: $nx-white;
+
+$nx-dark-primary-scheme: (
+  50: $nx-dark-primary-50,
+  100: $nx-dark-primary-100,
+  200: $nx-dark-primary-200,
+  300: $nx-dark-primary-300,
+  400: $nx-dark-primary-400,
+  // 500 is primary primary
+  500: $nx-dark-primary-400,
+  600: $nx-dark-primary-500,
+  700: $nx-dark-primary-600,
+  800: $nx-dark-primary-700,
+  900: $nx-dark-primary-800,
+  contrast: (
+    50: $nx-dark-primary-50-contrast,
+    100: $nx-dark-primary-100-contrast,
+    200: $nx-dark-primary-200-contrast,
+    300: $nx-dark-primary-300-contrast,
+    400: $nx-dark-primary-400-contrast,
+    500: $nx-dark-primary-500-contrast,
+    600: $nx-dark-primary-600-contrast,
+    700: $nx-dark-primary-700-contrast,
+    800: $nx-dark-primary-800-contrast,
+    900: $nx-dark-primary-900-contrast,
+  ),
+);
+
+
+$nx-dark-accent-scheme: (
+  50: $nx-dark-secondary-50,
+  100: $nx-dark-secondary-100,
+  200: $nx-dark-secondary-200,
+  300: $nx-dark-secondary-300,
+  400: $nx-dark-secondary-400,
+  //500 is our primary accent.
+  500: $nx-dark-secondary-500,
+  600: $nx-dark-secondary-600,
+  700: $nx-dark-secondary-700,
+  800: $nx-dark-secondary-800,
+  900: $nx-dark-secondary-900,
+  contrast: (
+    50: $nx-dark-secondary-50-contrast,
+    100: $nx-dark-secondary-100-contrast,
+    200: $nx-dark-secondary-200-contrast,
+    300: $nx-dark-secondary-300-contrast,
+    400: $nx-dark-secondary-400-contrast,
+    500: $nx-dark-secondary-500-contrast,
+    600: $nx-dark-secondary-600-contrast,
+    700: $nx-dark-secondary-700-contrast,
+    800: $nx-dark-secondary-800-contrast,
+    900: $nx-dark-secondary-900-contrast,
+  ),
+);
