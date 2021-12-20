@@ -1,5 +1,5 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -10,8 +10,7 @@ import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-
+export class AppComponent implements OnInit, AfterViewInit {
   isDarkMode= false;
 
   @HostBinding('class') className = '';
@@ -29,8 +28,10 @@ export class AppComponent implements OnInit {
     '100% Paid Medical'
   ];
 
-  constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
+  @ViewChild('myMainDiv') myMainDiv;
+  el: HTMLElement;
 
+  constructor(private dialog: MatDialog, private overlay: OverlayContainer) {}
 
   public ngOnInit(): void {
 
@@ -38,12 +39,25 @@ export class AppComponent implements OnInit {
       const darkClassName = 'darkMode';
       this.className = useDarkMode ? darkClassName : '';
       this.isDarkMode = useDarkMode;
+
+      //toggles main app dark mode on/off
+      this.el.classList.toggle(darkClassName);
+
+      //toggles the overlay darkmode on/off
       if (useDarkMode) {
+        console.log('adding dark mode');
         this.overlay.getContainerElement().classList.add(darkClassName);
+
       } else {
+        console.log('removing dark mode');
         this.overlay.getContainerElement().classList.remove(darkClassName);
+
       }
     });
+  }
+
+  ngAfterViewInit() {
+    this.el = this.myMainDiv.nativeElement;
   }
 
   public openDialog(): void {
