@@ -1,7 +1,7 @@
 @import './es-common-palettes.scss';
 
 // Emerald Seas Theme
-
+// 500 primary primary, 500 primary secondary
 $nx-dark-primary-50: #D4FFF9;
 $nx-dark-primary-100: #8AFFEF;
 $nx-dark-primary-200: #1EFFE1;
@@ -12,6 +12,19 @@ $nx-dark-primary-600: #0E786A;
 $nx-dark-primary-700: #0B6156;
 $nx-dark-primary-800: #095248;
 $nx-dark-primary-900: #08473F;
+
+///
+$nx-dark-secondary-50: #C9E7FF;
+$nx-dark-secondary-100: #ABD9FF;
+$nx-dark-secondary-200: #8ACAFF;
+$nx-dark-secondary-300: #3F9BE6;
+$nx-dark-secondary-400: #3786C7;
+$nx-dark-secondary-500: #2F73AB;
+$nx-dark-secondary-600: #265F8C;
+$nx-dark-secondary-700: #204F75;
+$nx-dark-secondary-800: #1C4466;
+$nx-dark-secondary-900: #1A3F5E;
+
 
 $nx-dark-primary-scheme: (
   50: $nx-dark-primary-50,
